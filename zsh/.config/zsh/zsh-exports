@@ -1,0 +1,14 @@
+# bookmarks
+if [ -d "$HOME/.bookmarks" ]; then
+    export CDPATH=".:$HOME/.bookmarks:/"
+    alias goto='cd -P'
+fi
+
+# pyenv initialization
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+fi
+
+export PATH="$PATH:$HOME/go/bin"
+eval "$(zoxide init zsh)"

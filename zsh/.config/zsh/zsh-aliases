@@ -1,0 +1,49 @@
+#!/bin/sh
+alias j='z'
+alias f='zi'
+alias g='lazygit'
+alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+# set nvim as default vim
+alias vim='nvim'
+alias vimrc='nvim ~/.config/nvim/'
+
+# SSH
+alias codingmunger_ssh='ssh ylim@45.79.157.129'
+alias nginx_ssh='ssh ylim@172.104.217.96'
+alias vidly_ssh='ssh ylim@138.197.2.233'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# confirm before overwriting someting
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+alias m="git checkout main"
+alias s="git checkout stable"
+
+case "$(uname -s)" in
+
+Darwin)
+	# echo 'Mac OS X'
+	alias ls='ls -G'
+	;;
+
+Linux)
+	alias ls='ls --color=auto'
+	;;
+
+CYGWIN* | MINGW32* | MSYS* | MINGW*)
+	# echo 'MS Windows'
+	;;
+*)
+	# echo 'Other OS'
+	;;
+esac
