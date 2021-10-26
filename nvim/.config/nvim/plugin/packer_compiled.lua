@@ -108,6 +108,10 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
