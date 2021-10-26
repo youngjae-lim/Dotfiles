@@ -7,5 +7,6 @@ require('bufferline-config')
 require('treesitter-config')
 require('autopairs-config')
 require('whichkey-config')
+require('telescope-config')
 vim.cmd('colorscheme nord')
 
