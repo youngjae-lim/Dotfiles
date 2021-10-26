@@ -69,6 +69,14 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/bufferline.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
   ["nord.nvim"] = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nord.nvim"
@@ -76,6 +84,10 @@ _G.packer_plugins = {
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
