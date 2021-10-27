@@ -40,6 +40,7 @@ local langservers = {
   'tsserver',
   'pyright',
   'gopls',
+  'rust_analyzer',
   'ls_emmet',
   'sumneko_lua'
 }
