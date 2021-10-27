@@ -1,4 +1,4 @@
-vim.g.nvim_tree_gitignore = 1
+vim.g.nvim_tree_gitignore = 0
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_width = 25
 -- following options are the default
