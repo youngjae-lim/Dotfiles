@@ -10,4 +10,3 @@ require('whichkey-config')
 require('telescope-config')
 require('lsp')
 vim.cmd('colorscheme nord')
-
