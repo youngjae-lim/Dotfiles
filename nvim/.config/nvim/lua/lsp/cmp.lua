@@ -53,6 +53,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
+    { name = 'path'},
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For utisnips users.
     -- { name = 'snippy' }, -- For snippy users.
@@ -60,7 +61,16 @@ cmp.setup({
     { name = 'buffer' },
   }),
   formatting = {
-    format = lspkind.cmp_format({with_text = true, maxwidth = 50})
+    format = lspkind.cmp_format({
+      with_text = true, 
+      menu = {
+        buffer = "[buf]",
+        nvim_lsp = "[LSP]",
+        path = "[path]",
+        vsnip = "[snip]",
+      },
+      maxwidth = 50
+    })
   }
 })
 
