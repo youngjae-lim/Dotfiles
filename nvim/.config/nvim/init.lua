@@ -11,4 +11,5 @@ require('telescope-config')
 require('colorizer-config')
 require('lsp')
 require('rust-tools-config')
-vim.cmd('colorscheme gruvbox8')
+vim.cmd "set fillchars+=vert:│"
+vim.cmd('colorscheme codesmell_dark')

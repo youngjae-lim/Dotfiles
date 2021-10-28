@@ -2,7 +2,9 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   -- use 'shaunsingh/nord.nvim'
-  use 'lifepillar/vim-gruvbox8'
+  -- use 'lifepillar/vim-gruvbox8'
+  -- use 'ghifarit53/tokyonight-vim'
+  use 'whatsthatsmell/codesmell_dark.vim'
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
   use {
     'nvim-lualine/lualine.nvim',
@@ -25,6 +27,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
@@ -40,5 +43,11 @@ return require('packer').startup(function()
     end
   }
   use 'simrat39/rust-tools.nvim'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
 end)
 
