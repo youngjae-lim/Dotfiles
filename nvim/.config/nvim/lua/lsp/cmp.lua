@@ -60,6 +60,9 @@ cmp.setup({
   }, {
     { name = 'buffer' },
   }),
+  documentation = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  },
   formatting = {
     format = lspkind.cmp_format({
       with_text = true, 
@@ -87,6 +90,14 @@ cmp.setup.cmdline(':', {
     { name = 'path' }
   }, {
     { name = 'cmdline' }
-  })
+  }),
+  mapping = {
+    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+    ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    })
+  }
 })
 

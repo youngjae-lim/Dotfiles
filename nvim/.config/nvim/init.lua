@@ -12,4 +12,4 @@ require('colorizer-config')
 require('lsp')
 require('rust-tools-config')
 vim.cmd "set fillchars+=vert:│"
-vim.cmd('colorscheme codesmell_dark')
+vim.cmd('colorscheme nightfox')

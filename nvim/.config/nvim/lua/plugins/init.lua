@@ -4,7 +4,9 @@ return require('packer').startup(function()
   -- use 'shaunsingh/nord.nvim'
   -- use 'lifepillar/vim-gruvbox8'
   -- use 'ghifarit53/tokyonight-vim'
-  use 'whatsthatsmell/codesmell_dark.vim'
+  -- use 'whatsthatsmell/codesmell_dark.vim'
+  -- use 'overcache/NeoSolarized'
+  use 'EdenEast/nightfox.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
   use {
     'nvim-lualine/lualine.nvim',

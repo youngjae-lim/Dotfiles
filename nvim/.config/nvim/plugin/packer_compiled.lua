@@ -98,10 +98,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
-  ["codesmell_dark.vim"] = {
-    loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/codesmell_dark.vim"
-  },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
     loaded = true,
@@ -114,6 +110,10 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nightfox.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
