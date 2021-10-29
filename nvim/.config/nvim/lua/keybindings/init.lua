@@ -1,12 +1,16 @@
 vim.g.mapleader = ' '
 local map = vim.api.nvim_set_keymap
+
+-- Windows navigation horizontally/vertically
 map('n', '<C-h>', '<C-w>h', {noremap = true, silent = false})
 map('n', '<C-l>', '<C-w>l', {noremap = true, silent = false})
 map('n', '<C-j>', '<C-w>j', {noremap = true, silent = false})
 map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
 
+-- Toggle NvimTree
 map('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = false})
 
+-- Continuous tab on selection
 map('v', '<', '<gv', {noremap = true, silent = false})
 map('v', '>', '>gv', {noremap = true, silent = false})
 

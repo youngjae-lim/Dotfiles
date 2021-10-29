@@ -81,7 +81,7 @@ font:
     # Style can be specified to pick a specific face.
     style: Italic
 
-  size: 12.0
+  size: 11.0
 
   ligatures: true
 
@@ -116,11 +116,12 @@ window:
   live_config_reload: true
 
 key_bindings:
-  # Increase/Descrease split window size
-  - { key: J, mods: Alt, chars: "\x1bj" }
-  - { key: K, mods: Alt, chars: "\x1bk" }
-  - { key: H, mods: Alt, chars: "\x1bh" }
-  - { key: L, mods: Alt, chars: "\x1bl" }
+  # Define any Alt key bindings here in order for vim Option key(M) binding to work properly
+  # - { key: J, mods: Alt, chars: "\x1bj" }
+  # - { key: K, mods: Alt, chars: "\x1bk" }
+  # - { key: H, mods: Alt, chars: "\x1bh" }
+  # - { key: L, mods: Alt, chars: "\x1bl" }
+
   # Copy and Paste  
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }
