@@ -57,14 +57,18 @@ map("n", "<leader>a", ":%y<cr>", { noremap = false, silent = true })
 map("i", "<C-o>", "<C-o>$", { noremap = false, silent = true })
 
 -- open file in directory of current file
-map("n", "<leader>ob", ":e %:h/", { noremap = false, silent = false })
+map("n", "<leader>ob", ":e %:h/",  { noremap = false, silent = false })
 map("n", "<leader>ov", ":vs %:h/", { noremap = false, silent = false })
 
 -- Open File Name under cursor in vert split
 map("n", "<leader>gf", ":vs <cfile><CR>", { noremap = false, silent = true })
 
 -- Resize split windows
-map('n', '<left>', ':vertical resize -2<CR>', {noremap = true, silent = false})
-map('n', '<down>', ':resize -2<CR>', {noremap = true, silent = false})
-map('n', '<up>', ':resize +2<CR>', {noremap = true, silent = false})
-map('n', '<right>', ':vertical resize +2<CR>', {noremap = true, silent = false})
+map('n', '<left>', ':vertical resize -2<CR>',  { noremap = true, silent = false})
+map('n', '<down>', ':resize -2<CR>',           { noremap = true, silent = false})
+map('n', '<up>', ':resize +2<CR>',             { noremap = true, silent = false})
+map('n', '<right>', ':vertical resize +2<CR>', { noremap = true, silent = false})
+
+-- Easy align (type 'vipga' = this selects a paragraph and invokes :EasyAlign command)
+map("x", "ga", ":EasyAlign", { noremap = false, silent = true })
+-- map("n", "ga", ":EasyAlign", { noremap = false, silent = true })

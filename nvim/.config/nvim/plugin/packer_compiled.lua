@@ -171,6 +171,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["vim-easy-align"] = {
+    loaded = true,
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/vim-easy-align"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/vim-vsnip"
