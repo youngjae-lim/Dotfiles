@@ -53,5 +53,6 @@ return require('packer').startup(function(use)
     end
   }
   use 'junegunn/vim-easy-align'
+  use 'akinsho/toggleterm.nvim'
 end)
 

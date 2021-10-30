@@ -22,13 +22,14 @@ cmp.setup({
       -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
     end,
   },
+
   mapping = {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-d>']     = cmp.mapping.scroll_docs(-4),
+    ['<C-f>']     = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-e>']     = cmp.mapping.close(),
+    ['<C-y>']     = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
+    ['<CR>']      = cmp.mapping.confirm({ select = true }),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -65,12 +66,12 @@ cmp.setup({
   },
   formatting = {
     format = lspkind.cmp_format({
-      with_text = true, 
+      with_text = true,
       menu = {
-        buffer = "[buf]",
+        buffer   = "[buf]",
         nvim_lsp = "[LSP]",
-        path = "[path]",
-        vsnip = "[snip]",
+        path     = "[path]",
+        vsnip    = "[snip]",
       },
       maxwidth = 50
     })
@@ -94,7 +95,7 @@ cmp.setup.cmdline(':', {
   mapping = {
     ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-    ['<CR>'] = cmp.mapping.confirm({
+    ['<CR>']  = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     })

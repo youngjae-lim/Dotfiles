@@ -11,5 +11,6 @@ require('telescope-config')
 require('colorizer-config')
 require('lsp')
 require('rust-tools-config')
+require('toggleterm-config')
 vim.cmd "set fillchars+=vert:│"
 vim.cmd('colorscheme nightfox')
