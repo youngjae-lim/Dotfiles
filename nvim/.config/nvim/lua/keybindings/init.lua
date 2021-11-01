@@ -2,10 +2,10 @@ vim.g.mapleader = ' '
 local map = vim.api.nvim_set_keymap
 
 -- Windows navigation horizontally/vertically
-map('n', '<C-h>', '<C-w>h', {noremap = true, silent = false})
-map('n', '<C-l>', '<C-w>l', {noremap = true, silent = false})
-map('n', '<C-j>', '<C-w>j', {noremap = true, silent = false})
-map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
+map('n', '<left>', '<C-w>h',  { noremap = true, silent = false})
+map('n', '<right>', '<C-w>l', { noremap = true, silent = false})
+map('n', '<down>', '<C-w>j',  { noremap = true, silent = false})
+map('n', '<up>', '<C-w>k',    { noremap = true, silent = false})
 
 -- Toggle NvimTree
 map('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = false})
@@ -87,10 +87,10 @@ map("n", "<leader>ov", ":vs %:h/", { noremap = false, silent = false })
 map("n", "<leader>gf", ":vs <cfile><CR>", { noremap = false, silent = true })
 
 -- Resize split windows
-map('n', '<left>', ':vertical resize -2<CR>',  { noremap = true, silent = false })
-map('n', '<down>', ':resize -2<CR>',           { noremap = true, silent = false })
-map('n', '<up>', ':resize +2<CR>',             { noremap = true, silent = false })
-map('n', '<right>', ':vertical resize +2<CR>', { noremap = true, silent = false })
+map('n', '<S-left>', ':vertical resize -2<CR>',  { noremap = true, silent = false })
+map('n', '<S-down>', ':resize -2<CR>',           { noremap = true, silent = false })
+map('n', '<S-up>', ':resize +2<CR>',             { noremap = true, silent = false })
+map('n', '<S-right>', ':vertical resize +2<CR>', { noremap = true, silent = false })
 
 -- Easy align (type 'vipga' = this selects a paragraph and invokes :EasyAlign command)
 map("x", "ga", ":EasyAlign", { noremap = false, silent = true })
