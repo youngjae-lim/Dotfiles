@@ -54,5 +54,6 @@ return require('packer').startup(function(use)
   }
   use 'junegunn/vim-easy-align'
   use 'akinsho/toggleterm.nvim'
+  use 'matze/vim-move'
 end)
 

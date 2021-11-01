@@ -45,7 +45,27 @@ map(
   [[<Cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<CR>]],
   { noremap = true, silent = true }
 )
+-- Search in Marks
+map(
+  "n",
+  ",m",
+  [[<Cmd>lua require'telescope.builtin'.marks({results_title='Marks Results'})<CR>]],
+  { noremap = true, silent = true }
+)
 
+-- Yank from the curent position to the end of line
+map("n", "Y", "y$", { noremap = true, silent = true })
+
+-- Keep it centered
+map("n", "n", "nzzzv", { noremap = true, silent = true })
+map("n", "N", "Nzzzv", { noremap = true, silent = true })
+map("n", "J", "mzJ`z", { noremap = true, silent = true })
+
+-- Undo break points
+map("i", ",", ",<c-g>u", { noremap = true, silent = true })
+map("i", ".", ".<c-g>u", { noremap = true, silent = true })
+map("i", "!", "!<c-g>u", { noremap = true, silent = true })
+map("i", "?", "?<c-g>u", { noremap = true, silent = true })
 
 -- run packer sync
 map("n", "<leader>ps", [[<Cmd>PackerSync<CR>]], { noremap = true, silent = true })
@@ -56,6 +76,9 @@ map("n", "<leader>a", ":%y<cr>", { noremap = false, silent = true })
 -- Tab out of parenthesis, curly/square brackets
 map("i", "<C-o>", "<C-o>$", { noremap = false, silent = true })
 
+-- Clear highlights searched
+map("n", "<esc><esc>", ":noh<CR>", { noremap = false, silent = true })
+
 -- open file in directory of current file
 map("n", "<leader>ob", ":e %:h/",  { noremap = false, silent = false })
 map("n", "<leader>ov", ":vs %:h/", { noremap = false, silent = false })
@@ -64,16 +87,15 @@ map("n", "<leader>ov", ":vs %:h/", { noremap = false, silent = false })
 map("n", "<leader>gf", ":vs <cfile><CR>", { noremap = false, silent = true })
 
 -- Resize split windows
-map('n', '<left>', ':vertical resize -2<CR>',  { noremap = true, silent = false})
-map('n', '<down>', ':resize -2<CR>',           { noremap = true, silent = false})
-map('n', '<up>', ':resize +2<CR>',             { noremap = true, silent = false})
-map('n', '<right>', ':vertical resize +2<CR>', { noremap = true, silent = false})
+map('n', '<left>', ':vertical resize -2<CR>',  { noremap = true, silent = false })
+map('n', '<down>', ':resize -2<CR>',           { noremap = true, silent = false })
+map('n', '<up>', ':resize +2<CR>',             { noremap = true, silent = false })
+map('n', '<right>', ':vertical resize +2<CR>', { noremap = true, silent = false })
 
 -- Easy align (type 'vipga' = this selects a paragraph and invokes :EasyAlign command)
 map("x", "ga", ":EasyAlign", { noremap = false, silent = true })
 
-
--- -- Terminal windows mappings
+-- Terminal windows mappings
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
   vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)

@@ -12,5 +12,6 @@ require('colorizer-config')
 require('lsp')
 require('rust-tools-config')
 require('toggleterm-config')
+require('vim-move-config')
 vim.cmd "set fillchars+=vert:│"
 vim.cmd('colorscheme nightfox')
