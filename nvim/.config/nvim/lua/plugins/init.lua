@@ -6,7 +6,8 @@ return require('packer').startup(function(use)
   -- use 'ghifarit53/tokyonight-vim'
   -- use 'whatsthatsmell/codesmell_dark.vim'
   -- use 'overcache/NeoSolarized'
-  use 'EdenEast/nightfox.nvim'
+  -- use 'EdenEast/nightfox.nvim'
+  use 'sainnhe/everforest'
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
   use {
     'nvim-lualine/lualine.nvim',
