@@ -38,7 +38,7 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  2
+yabai -m config top_padding                  28 
 yabai -m config bottom_padding               2
 yabai -m config left_padding                 2
 yabai -m config right_padding                2
@@ -64,6 +64,7 @@ yabai -m space 10 --label X
 
 # float system preferences. Most of these just diable Yabai form resizing them.
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Font Book$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
