@@ -98,6 +98,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
+  ["dashboard-nvim"] = {
+    loaded = true,
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
+  },
   everforest = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/everforest"
