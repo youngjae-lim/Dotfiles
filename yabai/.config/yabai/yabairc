@@ -71,7 +71,7 @@ yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
-
+yabai -m rule --add title="mylauncher" sticky=on layer=above border=off manage=off
 
 # SPACEBAR_HEIGHT=$(spacebar -m config height)
 # yabai -m config external_bar all:$SPACEBAR_HEIGHT:0
