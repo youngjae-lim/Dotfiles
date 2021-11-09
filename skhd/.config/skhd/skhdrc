@@ -4,6 +4,9 @@ rctrl - return : open -n -a Alacritty
 # Open a Popup Launcher
 cmd - space : /Users/youngjaelim/.config/bin/popup.sh /Users/youngjaelim/.config/bin/launcher.sh
 
+# Open a Notetaker
+shift + ctrl - n : alacritty -t "notetaker" -e /Users/youngjaelim/.config/bin/notetaker
+
 # Navigation (note that f1 key is mapped to rctrl using karabiner)
 rctrl - h : yabai -m window --focus west
 rctrl - j : yabai -m window --focus south
