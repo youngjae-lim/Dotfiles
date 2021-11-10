@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 noteFilename="${HOME}/Google Drive/My Drive/Notes/src/note-$(date +%Y-%m-%d).md"
 
