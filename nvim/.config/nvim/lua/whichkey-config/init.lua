@@ -1,4 +1,18 @@
 local wk = require("which-key")
+-- Floating terminal by toggleterm
+local Terminal = require('toggleterm.terminal').Terminal
+local toggle_float = function()
+  local float = Terminal:new({direction = "float"})
+  return float:toggle()
+end
+local toggle_lazygit = function()
+  local lazygit = Terminal:new({cmd = "lazygit", direction = "float"})
+  return lazygit:toggle()
+end
+local toggle_notetaker = function()
+  local notetaker = Terminal:new({cmd = "notetaker", direction = "float"})
+  return notetaker:toggle()
+end
 local mappings = {
   q = {":q<cr>", "Quit"},
   Q = {":wq<cr>", "Save & Quit"},
@@ -18,6 +32,13 @@ local mappings = {
     a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', "Code actions"},
     e = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
     q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show loclist"}
+  },
+  t = {
+    name = "Toggle",
+    t = {":ToggleTerm<cr>", "Split Below"},
+    f = {toggle_float, "Floating Terminal"},
+    l = {toggle_lazygit, "Floating Lazygit"},
+    n = {toggle_notetaker, "Floating Notetaker"}
   }
 }
 local opts = {prefix = '<leader>'}

@@ -1,8 +1,8 @@
-vim.g.nvim_tree_gitignore = 0
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_width = 25
 -- following options are the default
 require'nvim-tree'.setup {
+  gitignore = true, 
   -- disables netrw completely
   disable_netrw       = true,
   -- hijack netrw window on startup
@@ -12,7 +12,7 @@ require'nvim-tree'.setup {
   -- will not open on setup if the filetype is in this list
   ignore_ft_on_setup  = {},
   -- closes neovim automatically when the tree is the last **WINDOW** in the view
-  auto_close          = false,
+  auto_close          = true,
   -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
   open_on_tab         = false,
   -- hijacks new directory buffers when they are opened.
