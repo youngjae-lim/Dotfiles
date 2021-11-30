@@ -57,5 +57,6 @@ return require('packer').startup(function(use)
   use 'akinsho/toggleterm.nvim'
   use 'matze/vim-move'
   use 'glepnir/dashboard-nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
 end)
 

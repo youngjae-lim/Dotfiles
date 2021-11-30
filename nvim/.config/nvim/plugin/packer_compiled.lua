@@ -72,140 +72,176 @@ _G.packer_plugins = {
   ["Comment.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0" },
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/Comment.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
   },
   ["bufferline.nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/bufferline.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-cmdline"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-cmdline"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-path"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["dashboard-nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
+    url = "https://github.com/glepnir/dashboard-nvim"
   },
   everforest = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/everforest"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
   },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lsp_signature.nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["nvim-ts-rainbow"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/rust-tools.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/toggleterm.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["vim-easy-align"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/vim-easy-align"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/vim-easy-align",
+    url = "https://github.com/junegunn/vim-easy-align"
   },
   ["vim-move"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/vim-move"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/vim-move",
+    url = "https://github.com/matze/vim-move"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["which-key.nvim"] = {
     loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/which-key.nvim"
+    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
