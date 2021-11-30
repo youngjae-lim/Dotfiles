@@ -15,5 +15,6 @@ require('toggleterm-config')
 require('vim-move-config')
 require('dashboard-config')
 require('blankline-config')
+require('format-config')
 vim.cmd "set fillchars+=vert:│"
 vim.cmd('colorscheme everforest')

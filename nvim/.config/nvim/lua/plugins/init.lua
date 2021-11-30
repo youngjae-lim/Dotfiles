@@ -58,5 +58,6 @@ return require('packer').startup(function(use)
   use 'matze/vim-move'
   use 'glepnir/dashboard-nvim'
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'lukas-reineke/format.nvim'
 end)
 
