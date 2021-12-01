@@ -7,7 +7,7 @@ You will need `git` and GNU `stow`
 Clone into your `$HOME` directory or `~`
 
 ```bash
-git clone https://github.com/youngjae-lim/Dotfiles.git 
+git clone https://github.com/youngjae-lim/Dotfiles.git ~
 ```
 
 Run `stow` to symlink everything or just select what you want
