@@ -1,5 +1,6 @@
 local actions = require('telescope.actions')
 require('telescope').setup {
+  extensions = {bookmarks = {selected_browser = "google_chrome", url_open_command = "open"}},
   defaults = {
     layout_config = {width = 0.75, prompt_position = "top", preview_cutoff = 120, horizontal = {mirror = false}, vertical = {mirror = false}},
     find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
@@ -40,6 +41,12 @@ require('telescope').setup {
     }
   }
 }
+
+-- Extensions --
+
+-- https://github.com/dhruvmanila/telescope-bookmarks.nvim
+require("telescope").load_extension "bookmarks"
+
 
 -- my telescopic customizations
 local M = {}

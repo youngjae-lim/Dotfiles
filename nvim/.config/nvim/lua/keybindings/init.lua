@@ -22,7 +22,7 @@ map('n', ',h', [[<Cmd>lua require'telescope.builtin'.help_tags({results_title='H
 -- Search keymaps
 map('n', ',k', [[<Cmd>lua require'telescope.builtin'.keymaps({results_title='Key Maps Results'})<CR>]], {noremap = true, silent = true})
 -- Telescopic version of FZF's :Lines
-map("n", ",l", [[<Cmd>lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>]], {noremap = true, silent = true})
+map("n", ",l", [[<Cmd>lua require'telescope.builtin'.live_grep({grep_open_files=true})<CR>]], {noremap = true, silent = true})
 -- show LSP diagnostics for all open buffers
 map("n", ",d", [[<Cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<CR>]], {noremap = true, silent = true})
 -- Search in Marks
@@ -31,6 +31,8 @@ map("n", ",m", [[<Cmd>lua require'telescope.builtin'.marks({results_title='Marks
 map("n", ",n", [[<Cmd>lua require'telescope-config'.find_notes({results_title='Notes Results'})<CR>]], {noremap = true, silent = true})
 -- Grep notes
 map("n", ",g", [[<Cmd>lua require'telescope-config'.grep_notes({results_title='Notes Results'})<CR>]], {noremap = true, silent = true})
+-- Search Google Chrome Bookmarks & Go
+map("n", ",b", [[<Cmd>lua require'telescope'.extensions.bookmarks.bookmarks()<CR>]], {noremap = true, silent = true})
 
 -- Yank from the curent position to the end of line
 map("n", "Y", "y$", {noremap = true, silent = true})
