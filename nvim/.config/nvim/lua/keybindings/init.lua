@@ -36,6 +36,8 @@ map("n", ",b", [[<Cmd>lua require'telescope'.extensions.bookmarks.bookmarks()<CR
 -- Open zoxide list
 map("n", ",z", [[<Cmd>lua require'telescope'.extensions.zoxide.list({results_title='Z Directories', prompt_title = 'Z Prompt'})<CR>]],
     {noremap = true, silent = true})
+-- Neoclip
+map("n", ",c", [[<Cmd>lua require'telescope'.extensions.neoclip.plus()<CR>]], {noremap = true, silent = true})
 
 -- Yank from the curent position to the end of line
 map("n", "Y", "y$", {noremap = true, silent = true})
