@@ -17,6 +17,7 @@ return require('packer').startup(function(use)
   use {'windwp/nvim-autopairs'}
   use {'folke/which-key.nvim'}
   use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}}
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
   use 'nvim-lua/popup.nvim'
   use 'jvgrootveld/telescope-zoxide'
   use 'dhruvmanila/telescope-bookmarks.nvim'

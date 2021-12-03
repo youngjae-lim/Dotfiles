@@ -1,6 +1,14 @@
 local actions = require('telescope.actions')
 require('telescope').setup {
-  extensions = {bookmarks = {selected_browser = "google_chrome", url_open_command = "open"}},
+  extensions = {
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case" -- this is default
+    },
+    bookmarks = {selected_browser = "google_chrome", url_open_command = "open"}
+  },
   defaults = {
     layout_config = {width = 0.75, prompt_position = "top", preview_cutoff = 120, horizontal = {mirror = false}, vertical = {mirror = false}},
     find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
@@ -48,6 +56,7 @@ require('telescope').setup {
 require("telescope").load_extension("bookmarks")
 require("telescope").load_extension("zoxide")
 require("telescope").load_extension("neoclip")
+require("telescope").load_extension("fzf")
 
 -- my telescopic customizations
 local M = {}
