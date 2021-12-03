@@ -61,11 +61,9 @@ require("telescope").load_extension("fzf")
 -- my telescopic customizations
 local M = {}
 
--- @TODOUA: break up notes and configs
 function M.grep_notes()
   local opts = {}
   opts.hidden = true
-  -- opts.file_ignore_patterns = { 'thesaurus/'}
   opts.search_dirs = {"~/Google Drive/My Drive/Notes/"}
   opts.prompt_prefix = "   "
   opts.prompt_title = " Grep Notes"
