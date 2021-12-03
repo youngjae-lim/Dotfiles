@@ -17,6 +17,9 @@ map('v', '>', '>gv', {noremap = true, silent = false})
 ---------------------------------
 -- ** the Telescope comma maps **
 ---------------------------------
+-- Find files with names that contain cursor word
+map("n", ",f", [[<Cmd>lua require'telescope.builtin'.find_files({find_command={'fd', vim.fn.expand('<cword>')}})<CR>]],
+    {noremap = true, silent = true})
 -- Search in help
 map('n', ',h', [[<Cmd>lua require'telescope.builtin'.help_tags({results_title='Help Results'})<CR>]], {noremap = true, silent = true})
 -- Search keymaps
