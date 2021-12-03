@@ -41,6 +41,8 @@ map("n", ",z", [[<Cmd>lua require'telescope'.extensions.zoxide.list({results_tit
     {noremap = true, silent = true})
 -- Neoclip
 map("n", ",c", [[<Cmd>lua require'telescope'.extensions.neoclip.plus()<CR>]], {noremap = true, silent = true})
+-- Grep word under cursor
+map("n", ",w", [[<Cmd>lua require'telescope.builtin'.grep_string()<CR>]], {noremap = true, silent = true})
 
 -- Yank from the curent position to the end of line
 map("n", "Y", "y$", {noremap = true, silent = true})
