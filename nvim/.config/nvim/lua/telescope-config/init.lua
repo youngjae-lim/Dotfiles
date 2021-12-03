@@ -45,8 +45,8 @@ require('telescope').setup {
 -- Extensions --
 
 -- https://github.com/dhruvmanila/telescope-bookmarks.nvim
-require("telescope").load_extension "bookmarks"
-
+require("telescope").load_extension("bookmarks")
+require("telescope").load_extension("zoxide")
 
 -- my telescopic customizations
 local M = {}

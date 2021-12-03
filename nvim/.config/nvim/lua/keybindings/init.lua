@@ -33,6 +33,9 @@ map("n", ",n", [[<Cmd>lua require'telescope-config'.find_notes({results_title='N
 map("n", ",g", [[<Cmd>lua require'telescope-config'.grep_notes({results_title='Notes Results'})<CR>]], {noremap = true, silent = true})
 -- Search Google Chrome Bookmarks & Go
 map("n", ",b", [[<Cmd>lua require'telescope'.extensions.bookmarks.bookmarks()<CR>]], {noremap = true, silent = true})
+-- Open zoxide list
+map("n", ",z", [[<Cmd>lua require'telescope'.extensions.zoxide.list({results_title='Z Directories', prompt_title = 'Z Prompt'})<CR>]],
+    {noremap = true, silent = true})
 
 -- Yank from the curent position to the end of line
 map("n", "Y", "y$", {noremap = true, silent = true})
