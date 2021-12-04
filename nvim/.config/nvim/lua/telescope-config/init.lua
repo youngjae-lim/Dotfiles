@@ -81,4 +81,14 @@ function M.find_notes()
   }
 end
 
+function M.browse_webdev_projects()
+  require("telescope.builtin").file_browser {
+    prompt_title = " Browse WebDev Projects",
+    prompt_prefix = " ﮷ ",
+    cwd = "~/Projects/Personal/Web-developments/",
+    layout_strategy = "horizontal",
+    layout_config = {preview_width = 0.65, width = 0.75}
+  }
+end
+
 return M
