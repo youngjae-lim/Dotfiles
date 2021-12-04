@@ -66,6 +66,8 @@ map("n", "<leader>sd",
     {noremap = true, silent = true})
 -- show LSP code actions - lists any LSP actions for the word under the cursor, that can be triggered with <cr>
 map("n", "<leader>sc", [[<Cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>]], {noremap = true, silent = true})
+-- search @TODOs
+map("n", "<leader>st", [[<Cmd>lua require'telescope-config'.search_todos()<CR>]], {noremap = true, silent = true})
 
 -- Yank from the curent position to the end of line
 map("n", "Y", "y$", {noremap = true, silent = true})

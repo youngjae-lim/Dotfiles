@@ -13,6 +13,7 @@ local toggle_notetaker = function()
   local notetaker = Terminal:new({cmd = "notetaker", direction = "float"})
   return notetaker:toggle()
 end
+-- @TODO: organize which-keys
 local mappings = {
   q = {":q<cr>", "Quit"},
   Q = {":wq<cr>", "Save & Quit"},

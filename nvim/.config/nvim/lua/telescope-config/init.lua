@@ -91,4 +91,15 @@ function M.browse_webdev_projects()
   }
 end
 
+-- search todos
+function M.search_todos()
+  require("telescope.builtin").grep_string {
+    prompt_title = " Search @TODOs",
+    prompt_prefix = " ",
+    results_title = "@TODs Results",
+    path_display = {"smart"},
+    search = "@TODO"
+  }
+end
+
 return M
