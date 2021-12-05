@@ -49,6 +49,9 @@ map("n", ",z", [[<Cmd>lua require'telescope'.extensions.zoxide.list({results_tit
 map("n", ",c", [[<Cmd>lua require'telescope'.extensions.neoclip.plus()<CR>]], {noremap = true, silent = true})
 -- Grep word under cursor
 map("n", ",w", [[<Cmd>lua require'telescope.builtin'.grep_string()<CR>]], {noremap = true, silent = true})
+-- Get list of repos
+map("n", ",r", [[<Cmd>lua require'telescope-config'.repo_list()<CR>]], {noremap = true, silent = true})
+
 --------------------------------------
 -- ** the Telescope <leader>s maps **
 --------------------------------------

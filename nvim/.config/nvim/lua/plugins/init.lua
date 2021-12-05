@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
       require('neoclip').setup()
     end
   }
+  use 'cljoly/telescope-repo.nvim'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'

@@ -57,9 +57,17 @@ require("telescope").load_extension("bookmarks")
 require("telescope").load_extension("zoxide")
 require("telescope").load_extension("neoclip")
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("repo")
 
 -- my telescopic customizations
 local M = {}
+
+-- requires repo extension
+function M.repo_list()
+  local opts = {}
+  opts.prompt_title = " Repos"
+  require("telescope").extensions.repo.list(opts)
+end
 
 function M.grep_notes()
   local opts = {}
