@@ -128,3 +128,6 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 -- Turn a markdown note into a pdf
 vim.cmd('autocmd BufWritePost *note-*.md silent !buildNote "%:p"')
+
+-- Turn a markdown file into a presentation pdf
+map('n', '<leader>mp', ':!buildPresentation "%:p"<CR>', {noremap = true, silent = true})
