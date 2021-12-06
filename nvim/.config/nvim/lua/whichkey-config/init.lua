@@ -23,6 +23,7 @@ local mappings = {
   f = {":Telescope find_files<cr>", "Telescope Find Files"},
   r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
   b = {":Telescope file_browser<cr>", "Telescope File Browser"},
+  O = {"<cmd>!mostRecentNote<cr>", "Open Most Recent Note in PDF"},
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},
