@@ -104,7 +104,7 @@ function M.search_todos()
   require("telescope.builtin").grep_string {
     prompt_title = " Search @TODOs",
     prompt_prefix = " ",
-    results_title = "@TODs Results",
+    results_title = "@TODOs Results",
     path_display = {"smart"},
     search = "@TODO"
   }

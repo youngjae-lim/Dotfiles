@@ -1,0 +1,7 @@
+#!/bin/sh
+
+pdfNoteLocation="${HOME}/Google Drive/My Drive/Notes/src/pdf/*.pdf"
+
+echo "$pdfNoteLocation"
+
+ls -r "$pdfNoteLocation" | head -n1 | xargs zathur

@@ -125,3 +125,6 @@ end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+-- Turn a markdown note into a pdf
+vim.cmd('autocmd BufWritePost *note-*.md silent !buildNote "%:p"')
