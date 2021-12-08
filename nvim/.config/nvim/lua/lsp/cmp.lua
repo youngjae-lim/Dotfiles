@@ -10,7 +10,7 @@ local feedkey = function(key, mode)
 end
 
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require 'cmp'
 local lspkind = require('lspkind')
 
 cmp.setup({
@@ -20,16 +20,16 @@ cmp.setup({
       -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
-    end,
+    end
   },
 
-  mapping     = {
+  mapping = {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-o>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
-    ['<CR>']  = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm({select = true}),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -41,7 +41,7 @@ cmp.setup({
       else
         fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
-    end, { "i", "s" }),
+    end, {"i", "s"}),
 
     ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
@@ -49,56 +49,35 @@ cmp.setup({
       elseif vim.fn["vsnip#jumpable"](-1) == 1 then
         feedkey("<Plug>(vsnip-jump-prev)", "")
       end
-    end, { "i", "s" }),
+    end, {"i", "s"})
   },
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
-    { name = 'path'},
+    {name = 'buffer'}, {name = 'nvim_lsp'}, {name = 'vsnip'}, -- For vsnip users.
+    {name = 'path'}, {name = 'latex_symbols'}
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For utisnips users.
     -- { name = 'snippy' }, -- For snippy users.
-  }, {
-    { name = 'buffer' },
   }),
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
+  documentation = {border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}},
   formatting = {
     format = lspkind.cmp_format({
       with_text = true,
-      menu = {
-        buffer   = "[buf]",
-        nvim_lsp = "[LSP]",
-        path     = "[path]",
-        vsnip    = "[snip]",
-      },
+      menu = {buffer = "[buf]", nvim_lsp = "[LSP]", path = "[path]", vsnip = "[snip]", latex_symbols = "[LaTeX]"},
       maxwidth = 50
     })
   }
 })
 
 -- Use buffer source for `/`.
-cmp.setup.cmdline('/', {
-  sources = {
-    { name = 'buffer' }
-  }
-})
+cmp.setup.cmdline('/', {sources = {{name = 'buffer'}}})
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  }),
+  sources = cmp.config.sources({{name = 'path'}}, {{name = 'cmdline'}}),
   mapping = {
-    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-    ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-    ['<CR>']  = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    })
+    ['<C-n>'] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Insert}),
+    ['<C-p>'] = cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Insert}),
+    ['<CR>'] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true})
   }
 })
 

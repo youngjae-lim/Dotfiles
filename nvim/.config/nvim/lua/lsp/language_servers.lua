@@ -41,7 +41,7 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- Add any supported language server here after you install the corresponding languageserver.
-local langservers = {'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer', 'ls_emmet', 'sumneko_lua'}
+local langservers = {'texlab', 'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer', 'ls_emmet', 'sumneko_lua'}
 
 for _, server in ipairs(langservers) do
   if server == 'sumneko_lua' then
@@ -56,13 +56,13 @@ for _, server in ipairs(langservers) do
             path = runtime_path
           },
           diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = {'vim'}
+            -- Get the language server to recognize the `vim` global and 'hs' for Hammperspoon
+            globals = {'vim', 'hs'}
           },
           workspace = {
             -- Make the server aware of Neovim runtime files
-            library = vim.api.nvim_get_runtime_file("", true),
-            checkThirdParty = false
+            library = {vim.api.nvim_get_runtime_file("", true), '/Applications/Hammerspoon.app/Contents/Resources/extensions/hs/'},
+            checkThirdParty = true
           },
           -- Do not send telemetry data containing a randomized but unique identifier
           telemetry = {enable = false}
