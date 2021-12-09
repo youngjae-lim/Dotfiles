@@ -20,6 +20,19 @@ if not configs.ls_emmet then
   }
 end
 
+if not configs.korean_ls then
+  configs.korean_ls = {
+    default_config = {
+      cmd = {'korean-ls', '--stdio'},
+      filetypes = {'text'},
+      root_dir = function()
+        return vim.loop.cwd()
+      end,
+      settings = {}
+    }
+  }
+end
+
 local system_name
 if vim.fn.has("mac") == 1 then
   system_name = "macOS"
@@ -41,7 +54,7 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- Add any supported language server here after you install the corresponding languageserver.
-local langservers = {'texlab', 'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer', 'ls_emmet', 'sumneko_lua'}
+local langservers = {'texlab', 'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer', 'ls_emmet', 'sumneko_lua', 'korean_ls'}
 
 for _, server in ipairs(langservers) do
   if server == 'sumneko_lua' then
