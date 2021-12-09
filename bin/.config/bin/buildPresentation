@@ -11,6 +11,8 @@ outputFile="$(basename "$filename" .md)_p.pdf"
 mkdir -p "$target"
 
 # Run pandoc command to generate a pdf presentation
-pandoc \
+pandoc "$filename" \
+	--pdf-engine=xelatex \
+	-V CJKmainfont="Noto Sans KR" \
 	-t beamer \
-	-o "$target/$outputFile" "$filename" &
+	-o "$target/$outputFile" &
