@@ -10,7 +10,7 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 local toggle_notetaker = function()
-  local notetaker = Terminal:new({cmd = "notetaker", direction = "float"})
+  local notetaker = Terminal:new({cmd = "notetaker.sh", direction = "float"})
   return notetaker:toggle()
 end
 -- @TODO: organize which-keys
@@ -23,7 +23,7 @@ local mappings = {
   f = {":Telescope find_files<cr>", "Telescope Find Files"},
   r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
   b = {":Telescope file_browser<cr>", "Telescope File Browser"},
-  O = {"<cmd>!mostRecentNote<cr>", "Open Most Recent Note in PDF"},
+  O = {"<cmd>!mostRecentNote.sh<cr>", "Open Most Recent Note in PDF"},
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},
