@@ -1,4 +1,5 @@
 vim.cmd('filetype plugin indent on')
+vim.cmd('set fillchars+=vert:│')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
