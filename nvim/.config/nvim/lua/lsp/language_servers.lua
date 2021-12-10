@@ -9,7 +9,8 @@ if not configs.ls_emmet then
     default_config = {
       cmd = {'ls_emmet', '--stdio'},
       filetypes = {
-        'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'haml', 'xml', 'xsl', 'pug', 'slim', 'sass',
+        'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript',
+        'typescriptreact', 'haml', 'xml', 'xsl', 'pug', 'slim', 'sass',
         'stylus', 'less', 'sss'
       },
       root_dir = function(fname)
@@ -47,14 +48,18 @@ end
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
 -- vim.fn.stdpath('config') gives us ${HOME}/.config/nvim as a path
 local sumneko_root_path = vim.fn.stdpath('config') .. '/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name
+                           .. "/lua-language-server"
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- Add any supported language server here after you install the corresponding languageserver.
-local langservers = {'texlab', 'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer', 'ls_emmet', 'sumneko_lua', 'korean_ls'}
+local langservers = {
+  'texlab', 'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer',
+  'ls_emmet', 'sumneko_lua', 'korean_ls'
+}
 
 for _, server in ipairs(langservers) do
   if server == 'sumneko_lua' then

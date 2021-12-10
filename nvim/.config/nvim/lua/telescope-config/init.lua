@@ -10,8 +10,17 @@ require('telescope').setup {
     bookmarks = {selected_browser = "google_chrome", url_open_command = "open"}
   },
   defaults = {
-    layout_config = {width = 0.75, prompt_position = "top", preview_cutoff = 120, horizontal = {mirror = false}, vertical = {mirror = false}},
-    find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+    layout_config = {
+      width = 0.75,
+      prompt_position = "top",
+      preview_cutoff = 120,
+      horizontal = {mirror = false},
+      vertical = {mirror = false}
+    },
+    find_command = {
+      'rg', '--no-heading', '--with-filename', '--line-number', '--column',
+      '--smart-case'
+    },
     prompt_prefix = " ",
     selection_caret = " ",
     entry_prefix = "  ",

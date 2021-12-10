@@ -5,9 +5,13 @@ require'format'.setup {
   json = {{cmd = {"prettier -w"}}},
   yaml = {{cmd = {"prettier -w"}}},
   javascript = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}},
-  javascriptreact = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}},
+  javascriptreact = {
+    {cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}
+  },
   typescript = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}},
-  typescriptreact = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}},
+  typescriptreact = {
+    {cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}
+  },
 
   -- Install cmake: brew install cmake
   -- Install luaformatter: luarocks install --server=https://luarocks.org/dev luaformatter
@@ -16,7 +20,7 @@ require'format'.setup {
       cmd = {
         function(file)
           return string.format(
-                     'lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=80 --break-after-table-lb --indent-width=2 %s',
+                     'lua-format -i --align-args --no-keep-simple-function-one-line --no-break-after-operator --column-limit=80 --break-after-table-lb --indent-width=2 %s',
                      file)
         end
       }
@@ -87,7 +91,8 @@ require'format'.setup {
     {
       cmd = {
         function(file)
-          return string.format("php-formatter formatter:use:sort --quiet %s", file)
+          return string.format("php-formatter formatter:use:sort --quiet %s",
+                               file)
         end
       },
       tempfile_postfix = ".tmp"

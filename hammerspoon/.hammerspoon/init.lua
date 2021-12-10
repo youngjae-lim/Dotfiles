@@ -1,14 +1,9 @@
-do
-  local english = "com.apple.keylayout.US"
+-- Load spoons
+hs.loadSpoon('CircleClock')
 
-  function changeInput()
-    local current = hs.keycodes.currentSourceID()
-    if not (current == english) then hs.keycodes.currentSourceID(english) end
-    hs.eventtap.keyStroke({}, 'escape')
-  end
+-- Load custom modules
+require('modules.inputsource_green')
+require('modules.vim')
 
-  hs.hotkey.bind({'control'}, '[', changeInput)
-
-  hs.loadSpoon('CircleClock')
-  hs.notify.show("Hammerspoon started!", "", "")
-end
+-- Notifications
+hs.notify.show("Hammerspoon started!", "", "")
