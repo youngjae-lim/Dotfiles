@@ -13,7 +13,7 @@ if not configs.ls_emmet then
         'typescriptreact', 'haml', 'xml', 'xsl', 'pug', 'slim', 'sass',
         'stylus', 'less', 'sss'
       },
-      root_dir = function(fname)
+      root_dir = function()
         return vim.loop.cwd()
       end,
       settings = {}
@@ -56,15 +56,44 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- Add any supported language server here after you install the corresponding languageserver.
+-- @TODO: Add 'taplo' for toml langauge server later. Currently there is a cargo build issue with the server.
+-- https://github.com/tamasfe/taplo/issues/197
 local langservers = {
   'texlab', 'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer',
   'ls_emmet', 'sumneko_lua', 'korean_ls'
 }
 
+local border = {
+  {"╭", "FloatBorder"}, {"─", "FloatBorder"}, {"╮", "FloatBorder"},
+  {"│", "FloatBorder"}, {"╯", "FloatBorder"}, {"─", "FloatBorder"},
+  {"╰", "FloatBorder"}, {"│", "FloatBorder"}
+}
+
+-- If you want to avoid being overwritten by your colorscheme, please remove comment below.
+-- vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=#1f2335]]
+-- vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=yellow guibg=#1f2335]]
+
+local handlers = {
+  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover,
+                                        {border = border}),
+  ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
+                                                {border = border}),
+  ['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic
+                                                         .on_publish_diagnostics,
+                                                     {
+    underline = true,
+    virtual_text = {prefix = '●', spacing = 5, severity_limit = 'Warning'},
+    update_in_insert = true,
+    signs = true
+  })
+}
+
+-- LSP settings (for overriding per client)
 for _, server in ipairs(langservers) do
   if server == 'sumneko_lua' then
     require'lspconfig'[server].setup {
       cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+      handlers = handlers,
       settings = {
         Lua = {
           runtime = {
@@ -88,7 +117,10 @@ for _, server in ipairs(langservers) do
       }
     }
   else
-    require'lspconfig'[server].setup {capabilities = capabilities}
+    require'lspconfig'[server].setup {
+      capabilities = capabilities,
+      handlers = handlers
+    }
   end
 end
 

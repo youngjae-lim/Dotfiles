@@ -11,7 +11,7 @@ function enter(prompt_bufnr)
   local cmd = 'colorscheme ' .. selected[1]
   vim.cmd(cmd)
 
-  -- @TODO figure out how to set the changed colorscheme to config in a better way. 
+  -- @TODO figure out how to set the changed colorscheme to config in a better way
   local vim_cmd = string.format("vim.cmd(\"%s\")", cmd)
   local init = vim.fn.expand("~/.config/nvim/lua/options/init.lua")
   local job_cmd =

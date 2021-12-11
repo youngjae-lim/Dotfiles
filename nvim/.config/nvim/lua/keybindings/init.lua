@@ -38,12 +38,10 @@ map("n", ",s",
     [[<Cmd>lua require'telescope.builtin'.live_grep({search_dirs={"%:p"}})<CR>]],
     {noremap = true, silent = true})
 -- show LSP diagnostics for all open buffers
-map("n", ",dw",
-    [[<Cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<CR>]],
+map("n", ",dw", [[<Cmd>Telescope diagnostics<CR>]],
     {noremap = true, silent = true})
 -- show LSP diagnostics for the current buffer
-map("n", ",db",
-    [[<Cmd>lua require'telescope.builtin'.lsp_document_diagnostics()<CR>]],
+map("n", ",db", [[<Cmd>Telescope diagnostics bufnr=0<CR>]],
     {noremap = true, silent = true})
 -- Search in Marks
 map("n", ",m",
