@@ -2,6 +2,7 @@
 alias j='z'
 alias f='zi'
 alias g='lazygit'
+alias nt='notetaker.sh'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 # set nvim as default vim
 alias vim='nvim'

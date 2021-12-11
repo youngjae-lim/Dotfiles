@@ -20,7 +20,7 @@ require'format'.setup {
       cmd = {
         function(file)
           return string.format(
-                     'lua-format -i --align-args --no-keep-simple-function-one-line --no-break-after-operator --column-limit=80 --break-after-table-lb --indent-width=2 %s',
+                     'lua-format -i --align-table-field --align-parameter --align-args --no-keep-simple-function-one-line --no-break-after-operator --column-limit=80 --break-after-table-lb --indent-width=2 %s',
                      file)
         end
       }

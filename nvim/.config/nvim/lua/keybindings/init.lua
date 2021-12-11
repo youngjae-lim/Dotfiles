@@ -78,6 +78,10 @@ map("n", ",w", [[<Cmd>lua require'telescope.builtin'.grep_string()<CR>]],
 -- Get list of repos
 map("n", ",r", [[<Cmd>lua require'telescope-config'.repo_list()<CR>]],
     {noremap = true, silent = true})
+-- Run a color picker
+map("n", ",i",
+    [[<Cmd>lua require'telescope-config.color_picker'.color_picker()<CR>]],
+    {noremap = true, silent = true})
 
 --------------------------------------
 -- ** the Telescope <leader>s maps **

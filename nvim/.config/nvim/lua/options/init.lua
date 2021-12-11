@@ -1,5 +1,4 @@
 vim.cmd('filetype plugin indent on')
-vim.cmd('colorscheme everforest')
 vim.cmd('set fillchars+=vert:│')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
@@ -38,3 +37,4 @@ vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.wo.wrap = true
 vim.wo.linebreak = true
+vim.cmd("colorscheme deus")
