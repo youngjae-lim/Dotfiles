@@ -5,7 +5,9 @@ local sorters = require "telescope.sorters"
 -- local dropdown = require "telescope.themes".get_dropdown()
 local action_state = require "telescope.actions.state"
 
-function enter(prompt_bufnr)
+local M = {}
+
+local enter = function(prompt_bufnr)
   local selected = action_state.get_selected_entry()
   -- print(vim.inspect(selected))
   local cmd = 'colorscheme ' .. selected[1]
@@ -21,14 +23,14 @@ function enter(prompt_bufnr)
   actions.close(prompt_bufnr)
 end
 
-function next_color(prompt_bufnr)
+local next_color = function(prompt_bufnr)
   actions.move_selection_next(prompt_bufnr)
   local selected = action_state.get_selected_entry()
   local cmd = 'colorscheme ' .. selected[1]
   vim.cmd(cmd)
 end
 
-function prev_color(prompt_bufnr)
+local prev_color = function(prompt_bufnr)
   actions.move_selection_previous(prompt_bufnr)
   local selected = action_state.get_selected_entry()
   local cmd = 'colorscheme ' .. selected[1]
@@ -59,9 +61,7 @@ local opts = {
   end
 }
 
-local colors = pickers.new(mini, opts)
-
-local M = {}
+colors = pickers.new(mini, opts)
 
 function M.color_picker()
   colors:find()

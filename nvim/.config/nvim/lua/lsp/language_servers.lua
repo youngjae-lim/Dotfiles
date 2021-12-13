@@ -58,9 +58,10 @@ table.insert(runtime_path, "lua/?/init.lua")
 -- Add any supported language server here after you install the corresponding languageserver.
 -- @TODO: Add 'taplo' for toml langauge server later. Currently there is a cargo build issue with the server.
 -- https://github.com/tamasfe/taplo/issues/197
+-- korean_ls is removded now. I don't think it is stable enough to use it.
 local langservers = {
   'texlab', 'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer',
-  'ls_emmet', 'sumneko_lua', 'korean_ls'
+  'ls_emmet', 'sumneko_lua'
 }
 
 local border = {

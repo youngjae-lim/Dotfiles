@@ -67,6 +67,10 @@ map("n", ",c", [[<Cmd>lua require'telescope'.extensions.neoclip.plus()<CR>]],
 -- Grep word under cursor
 map("n", ",w", [[<Cmd>lua require'telescope.builtin'.grep_string()<CR>]],
     {noremap = true, silent = true})
+-- Grep word under cursor - case-sensitive (exact word) - made for use with Replace All - see <leader>ra
+map("n", ",W",
+    [[<Cmd>lua require'telescope.builtin'.grep_string({word_match='-w'})<CR>]],
+    {noremap = true, silent = true})
 -- Get list of repos
 map("n", ",r", [[<Cmd>lua require'telescope-config'.repo_list()<CR>]],
     {noremap = true, silent = true})
@@ -159,6 +163,26 @@ map("x", "ga", ":EasyAlign", {noremap = false, silent = true})
 
 -- Remap gs to type out the global substitution command and put your cursor in position to type what you want to find/replace
 map("n", "gs", ":%s//g<Left><Left>", {noremap = false, silent = true})
+
+-- Replace word under cursor in Buffer (case-sensitive)
+map("n", ";sb", ":%s/<C-R><C-W>//gI<left><left><left>", {noremap = false})
+-- Replace word under cursor on Line (case-sensitive)
+map("n", ";sl", ":s/<C-R><C-W>//gI<left><left><left>", {noremap = false})
+
+-- ** Project-wide renaming with Telescope (optional) ** --
+-- Replace <cword> in all files listed in quickfix list:
+-- Step 0: Skip steps 1 & 2 if you populate your quickfix list another way
+-- Step 1. Use Telescope's grep_string({word_match='-w'}) - <leader>Q below
+-- Step 2. In Telescope `Normal` mode, type <C-Q> (default for sending all to qf)
+-- Step 3. Run this mapping, fill in new word and press <CR> (!Don't do this without VCS!!)
+-- Mnemonic: Replace All - case-sensitive - ignore errors about files not having the word
+-- -- (you will get LSP errors if you jack something up, that's a good thing)
+-- With Telescope you can also only send selected files to the qf. See  Telescope docs.
+-- There are plugins or combiations of plugins that can do this. But, this is the 'magic'
+-- This can also be leveraged to open your multi-selected files in Telescope (for now: https://git.io/telescope807)
+map("n", ";sa",
+    ":cfdo %s/<C-R><C-W>//geI<bar>update<left><left><left><left><left><left><left><left><left><left><left>",
+    {noremap = false})
 
 -- Terminal windows mappings
 function _G.set_terminal_keymaps()
