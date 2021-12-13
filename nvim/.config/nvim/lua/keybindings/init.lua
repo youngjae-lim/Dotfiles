@@ -37,12 +37,6 @@ map("n", ",l",
 map("n", ",s",
     [[<Cmd>lua require'telescope.builtin'.live_grep({search_dirs={"%:p"}})<CR>]],
     {noremap = true, silent = true})
--- show LSP diagnostics for all open buffers
-map("n", ",dw", [[<Cmd>Telescope diagnostics<CR>]],
-    {noremap = true, silent = true})
--- show LSP diagnostics for the current buffer
-map("n", ",db", [[<Cmd>Telescope diagnostics bufnr=0<CR>]],
-    {noremap = true, silent = true})
 -- Search in Marks
 map("n", ",m",
     [[<Cmd>lua require'telescope.builtin'.marks({results_title='Marks Results'})<CR>]],
@@ -63,7 +57,7 @@ map("n", ",p",
 map("n", ",b",
     [[<Cmd>lua require'telescope'.extensions.bookmarks.bookmarks()<CR>]],
     {noremap = true, silent = true})
--- Open zoxide list
+-- Open zoxide list: easy directory change so that telescope can work under it.
 map("n", ",z",
     [[<Cmd>lua require'telescope'.extensions.zoxide.list({results_title='Z Directories', prompt_title = 'Z Prompt'})<CR>]],
     {noremap = true, silent = true})
@@ -84,6 +78,12 @@ map("n", ",i",
 --------------------------------------
 -- ** the Telescope <leader>s maps **
 --------------------------------------
+-- show LSP diagnostics for all open buffers
+map("n", "<leader>sG", [[<Cmd>Telescope diagnostics<CR>]],
+    {noremap = true, silent = true})
+-- show LSP diagnostics for the current buffer
+map("n", "<leader>sg", [[<Cmd>Telescope diagnostics bufnr=0<CR>]],
+    {noremap = true, silent = true})
 -- show LSP document symbols(function, property, variable, etc) in the current buffer
 map("n", "<leader>ss",
     [[<Cmd>lua require'telescope.builtin'.lsp_document_symbols()<CR>]],
@@ -114,6 +114,7 @@ map("n", "<leader>st",
     {noremap = true, silent = true})
 
 -- Yank from the curent position to the end of line
+-- @TODO: Is this default on or after neovim version 0.6?
 map("n", "Y", "y$", {noremap = true, silent = true})
 
 -- Keep it centered
@@ -155,6 +156,9 @@ map('n', '<S-right>', ':vertical resize +2<CR>',
 
 -- Easy align (type 'vipga' = this selects a paragraph and invokes :EasyAlign command)
 map("x", "ga", ":EasyAlign", {noremap = false, silent = true})
+
+-- Remap gs to type out the global substitution command and put your cursor in position to type what you want to find/replace
+map("n", "gs", ":%s//g<Left><Left>", {noremap = false, silent = true})
 
 -- Terminal windows mappings
 function _G.set_terminal_keymaps()

@@ -1,4 +1,20 @@
 local wk = require("which-key")
+wk.setup {
+  plugins = {
+    marks = false,
+    registers = false,
+    spelling = {enabled = false, suggestions = 20},
+    presets = {
+      operators = false,
+      motions = false,
+      text_objects = false,
+      windows = false,
+      nav = false,
+      z = false,
+      g = false
+    }
+  }
+}
 
 -- Floating terminal by toggleterm
 local Terminal = require('toggleterm.terminal').Terminal
@@ -31,26 +47,36 @@ local mappings = {
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},
-    A = {
-      '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "Add workspace folder"
+    w = {
+      '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "Add Workspace Folder"
     },
-    R = {
+    W = {
       '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
-      "Remove workspace folder"
+      "Remove Workspace Folder"
     },
     l = {
       '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
-      "List workspace folder"
+      "List Workspace Folder"
     },
-    D = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type definition"},
-    r = {'<cmd>lua vim.lsp.buf.rename()<CR>', "Rename"},
+    t = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type Definition"},
+    d = {'<cmd>lua vim.lsp.buf.definition()<CR>', "Go to Definition"},
+    D = {'<cmd>lua vim.lsp.buf.declaration()<CR>', "Go to Declaration"},
+    r = {'<cmd>lua vim.lsp.buf.references()<CR>', "References"}, -- Better use telescope builtin
+    R = {'<cmd>lua vim.lsp.buf.rename()<CR>', "Rename"},
     h = {'<cmd>lua vim.lsp.buf.hover()<CR>', "Hover"},
-    a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', "Code actions"},
+    s = {'<cmd>lua vim.lsp.buf.signature_help()<CR>', "Signature Help"},
+    a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', "Code Actions"},
     e = {
       '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
-      "Show line diagnostics"
-    },
-    q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show loclist"}
+      "Show Line Diagnostics"
+    }, -- Better use telescope builtin
+    n = {
+      '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', "Go To Next Diagnostics"
+    }, -- Better use telescope builtin
+    N = {
+      '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', "Go To Prev Diagnostics"
+    }, -- Better use telescope builtin
+    q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show Loclist"}
   },
   t = {
     name = "Toggle",

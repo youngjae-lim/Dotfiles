@@ -1,5 +1,7 @@
 vim.cmd('filetype plugin indent on')
 vim.cmd('set fillchars+=vert:│')
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
@@ -37,4 +39,4 @@ vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.wo.wrap = true
 vim.wo.linebreak = true
-vim.cmd("colorscheme everforest")
+vim.cmd("colorscheme OceanicNext")
