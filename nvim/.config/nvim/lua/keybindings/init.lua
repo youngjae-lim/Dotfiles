@@ -173,7 +173,7 @@ map("n", ";sl", ":s/<C-R><C-W>//gI<left><left><left>", {noremap = false})
 -- Replace <cword> in all files listed in quickfix list:
 -- Step 0: Skip steps 1 & 2 if you populate your quickfix list another way
 -- Step 1. Use Telescope's grep_string({word_match='-w'}) - <leader>Q below
--- Step 2. In Telescope `Normal` mode, type <C-Q> (default for sending all to qf)
+-- Step 2. In Telescope `Normal` mode, type <C-q> (default for sending all to qf)
 -- Step 3. Run this mapping, fill in new word and press <CR> (!Don't do this without VCS!!)
 -- Mnemonic: Replace All - case-sensitive - ignore errors about files not having the word
 -- -- (you will get LSP errors if you jack something up, that's a good thing)
@@ -183,6 +183,16 @@ map("n", ";sl", ":s/<C-R><C-W>//gI<left><left><left>", {noremap = false})
 map("n", ";sa",
     ":cfdo %s/<C-R><C-W>//geI<bar>update<left><left><left><left><left><left><left><left><left><left><left>",
     {noremap = false})
+
+-- Surround word under cursor w/ backticks (required vim-surround)
+map("n", "<leader>`", "ysiW`", {noremap = false})
+
+-- REPLACE: delete inner word & replace with last yanked (including system)
+map("n", ";r", '"_diwhp', {noremap = true})
+
+-- paste last thing yanked(not system copied), not deleted
+map("n", ";p", '"0p', {noremap = true})
+map("n", ";P", '"0P', {noremap = true})
 
 -- Terminal windows mappings
 function _G.set_terminal_keymaps()

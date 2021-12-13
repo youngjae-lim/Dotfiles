@@ -62,4 +62,6 @@ return require('packer').startup(function(use)
   use 'glepnir/dashboard-nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'lukas-reineke/format.nvim'
+  use 'azabiong/vim-highlighter'
+  use 'tpope/vim-surround'
 end)
