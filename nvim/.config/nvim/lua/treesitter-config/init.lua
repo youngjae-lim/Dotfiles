@@ -2,7 +2,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "html", "javascript", "typescript", "lua", "go", "rust", "toml", "yaml",
     "css", "scss", "graphql", "python", "svelte", "gomod", "json", "dockerfile",
-    "latex", "tsx", "vue"
+    "latex", "tsx", "vue", "vim"
   }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true, -- false will disable the whole extension

@@ -21,6 +21,7 @@ if not configs.ls_emmet then
   }
 end
 
+-- korean_ls is not included in the lsp server setup due to some issues.
 if not configs.korean_ls then
   configs.korean_ls = {
     default_config = {
@@ -61,7 +62,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 -- korean_ls is removded now. I don't think it is stable enough to use it.
 local langservers = {
   'texlab', 'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer',
-  'ls_emmet', 'sumneko_lua'
+  'ls_emmet', 'sumneko_lua', 'vimls'
 }
 
 local border = {
@@ -93,7 +94,10 @@ local handlers = {
 for _, server in ipairs(langservers) do
   if server == 'sumneko_lua' then
     require'lspconfig'[server].setup {
-      cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+      cmd = {
+        sumneko_binary, "-E --locale=\"en-US\"",
+        sumneko_root_path .. "/main.lua"
+      },
       handlers = handlers,
       settings = {
         Lua = {
