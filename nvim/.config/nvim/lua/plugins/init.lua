@@ -90,7 +90,7 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/format.nvim'
   use 'azabiong/vim-highlighter'
   use 'tpope/vim-surround'
-
+  use 'stevearc/dressing.nvim'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then require('packer').sync() end

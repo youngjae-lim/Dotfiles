@@ -18,6 +18,7 @@ local autocmds = {
     {"BufWritePost", "*note-*.md", "silent !buildNote.sh \"%:p\""}
   },
   -- Run PackerSync automatically whenever ~./config/nvim/lua/plugins/init.lua file is saved
+  -- @TODO: Follow up the issue where PackerSync removes and installs a newly added plugin instead of just installing.
   run_packersync = {
     {
       "BufWritePost", "*/nvim/lua/plugins/init.lua",
