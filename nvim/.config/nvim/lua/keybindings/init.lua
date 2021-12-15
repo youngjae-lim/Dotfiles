@@ -195,6 +195,7 @@ map("n", ";p", '"0p', {noremap = true})
 map("n", ";P", '"0P', {noremap = true})
 
 -- Terminal windows mappings
+-- It can be helpful to add mappings to make moving in and out of a terminal easier once toggled, whilst still keeping it open.
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
   vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
@@ -206,10 +207,6 @@ end
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
--- Turn a markdown note into a pdf
-vim.cmd('autocmd BufWritePost *note-*.md silent !buildNote.sh "%:p"')
-
--- Reformat *.md
 -- Turn a markdown file into a presentation pdf
 map('n', '<leader>mp', ':!buildPresentation.sh "%:p"<CR>',
     {noremap = true, silent = true})

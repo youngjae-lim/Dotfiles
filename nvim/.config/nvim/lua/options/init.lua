@@ -39,4 +39,4 @@ vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.wo.wrap = true
 vim.wo.linebreak = true
-vim.cmd("colorscheme miramare")
+vim.cmd("colorscheme everforest")

@@ -1,3 +1,4 @@
+require('autocmd-config')
 require('plugins')
 require('keybindings')
 require('options')
