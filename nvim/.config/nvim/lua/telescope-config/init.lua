@@ -1,6 +1,5 @@
 local actions = require('telescope.actions')
 local action_state = require "telescope.actions.state"
-
 local custom_actions = {}
 
 function custom_actions._multiopen(prompt_bufnr, open_cmd)
@@ -118,7 +117,6 @@ require('telescope').setup {
 
 -- https://github.com/dhruvmanila/telescope-bookmarks.nvim
 require("telescope").load_extension("bookmarks")
-require("telescope").load_extension("zoxide")
 require("telescope").load_extension("neoclip")
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("repo")

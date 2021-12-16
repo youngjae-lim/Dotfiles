@@ -242,11 +242,6 @@ _G.packer_plugins = {
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/telescope-repo.nvim",
     url = "https://github.com/cljoly/telescope-repo.nvim"
   },
-  ["telescope-zoxide"] = {
-    loaded = true,
-    path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/telescope-zoxide",
-    url = "https://github.com/jvgrootveld/telescope-zoxide"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/youngjaelim/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -294,14 +289,14 @@ time([[Defining packer_plugins]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-neoclip.lua
-time([[Config for nvim-neoclip.lua]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")
-time([[Config for nvim-neoclip.lua]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: nvim-neoclip.lua
+time([[Config for nvim-neoclip.lua]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")
+time([[Config for nvim-neoclip.lua]], false)
 if should_profile then save_profiles() end
 
 end)

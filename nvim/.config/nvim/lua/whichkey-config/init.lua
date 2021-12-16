@@ -36,8 +36,8 @@ end
 -- @TODO: organize which-keys
 local mappings = {
   q = {":q<cr>", "Quit"},
-  Q = {":wq<cr>", "Save & Quit"},
-  w = {":w<cr>", "Save"},
+  w = {":wq<cr>", "Save & Quit"},
+  W = {":wqa<cr>", "Save All & Quit"},
   x = {":bdelete<cr>", "Close"},
   E = {":e ~/.config/nvim/init.lua<cr>", "Edit nvim config"},
   f = {":Telescope find_files<cr>", "Telescope Find Files"},

@@ -12,6 +12,8 @@ local nvim_create_augroups = function(definitions)
   end
 end
 
+-- Define your own autocmds object here to be passed into nvim_create_augroups function
+-- Note that each object can have multiple definitions
 local autocmds = {
   -- Turn a markdown note file into a pdf
   turn_markdown_to_pdf = {

@@ -8,7 +8,7 @@ local action_state = require "telescope.actions.state"
 -- enter applies a selected item to window
 local enter = function(prompt_bufnr)
   local selected = action_state.get_selected_entry()
-  -- Show selected items
+  -- Show selected items (depending on what you want to do, you might have to manipulate the selected string)
   -- print(vim.inspect(selected))
   local cmd = 'mycmd ' .. selected[1]
   vim.cmd(cmd)
@@ -18,6 +18,8 @@ end
 -- next_item selects next item and applies it to window immediately
 local next_item = function(prompt_bufnr)
   actions.move_selection_next(prompt_bufnr)
+  -- use the follwoing three lines if you want to make any action upon selecting the item.
+  -- otherwise, delete it
   local selected = action_state.get_selected_entry()
   local cmd = 'mycmd ' .. selected[1]
   vim.cmd(cmd)
@@ -26,6 +28,8 @@ end
 -- prev_item selects previous item and applies it to window immediately
 local prev_item = function(prompt_bufnr)
   actions.move_selection_previous(prompt_bufnr)
+  -- use the follwoing three lines if you want to make any action upon selecting the item.
+  -- otherwise, delete it
   local selected = action_state.get_selected_entry()
   local cmd = 'mycmd ' .. selected[1]
   vim.cmd(cmd)

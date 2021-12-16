@@ -11,7 +11,7 @@ if not configs.ls_emmet then
       filetypes = {
         'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript',
         'typescriptreact', 'haml', 'xml', 'xsl', 'pug', 'slim', 'sass',
-        'stylus', 'less', 'sss'
+        'stylus', 'less', 'sss', 'svelte'
       },
       root_dir = function()
         return vim.loop.cwd()
@@ -62,7 +62,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 -- korean_ls is removded now. I don't think it is stable enough to use it.
 local langservers = {
   'texlab', 'html', 'cssls', 'tsserver', 'pyright', 'gopls', 'rust_analyzer',
-  'ls_emmet', 'sumneko_lua', 'vimls'
+  'ls_emmet', 'sumneko_lua', 'vimls', 'bashls', 'svelte'
 }
 
 local border = {

@@ -57,10 +57,6 @@ map("n", ",p",
 map("n", ",b",
     [[<Cmd>lua require'telescope'.extensions.bookmarks.bookmarks()<CR>]],
     {noremap = true, silent = true})
--- Open zoxide list: easy directory change so that telescope can work under it.
-map("n", ",z",
-    [[<Cmd>lua require'telescope'.extensions.zoxide.list({results_title='Z Directories', prompt_title = 'Z Prompt'})<CR>]],
-    {noremap = true, silent = true})
 -- Neoclip
 map("n", ",c", [[<Cmd>lua require'telescope'.extensions.neoclip.plus()<CR>]],
     {noremap = true, silent = true})
@@ -78,7 +74,10 @@ map("n", ",r", [[<Cmd>lua require'telescope-config'.repo_list()<CR>]],
 map("n", ",i",
     [[<Cmd>lua require'telescope-config.color_picker'.color_picker()<CR>]],
     {noremap = true, silent = true})
-
+-- Run a directory picker(it uses zoxide underneath it)
+map("n", ",z",
+    [[<Cmd>lua require'telescope-config.directory_picker'.directory_picker()<CR>]],
+    {noremap = true, silent = true})
 --------------------------------------
 -- ** the Telescope <leader>s maps **
 --------------------------------------
