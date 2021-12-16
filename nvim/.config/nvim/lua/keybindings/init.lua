@@ -193,6 +193,13 @@ map("n", ";r", '"_diwhp', {noremap = true})
 map("n", ";p", '"0p', {noremap = true})
 map("n", ";P", '"0P', {noremap = true})
 
+-- Wrap selection in markdown link
+map("v", ";wl", [[c[<c-r>"]()<esc>]], {noremap = false})
+
+-- Toggle foldcolumn
+map("n", ";tf", [[<cmd>lua require('options.toggle').toggle_fold_col()<CR>]],
+    {noremap = true, silent = true})
+
 -- Terminal windows mappings
 -- It can be helpful to add mappings to make moving in and out of a terminal easier once toggled, whilst still keeping it open.
 function _G.set_terminal_keymaps()

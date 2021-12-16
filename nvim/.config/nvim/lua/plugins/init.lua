@@ -27,12 +27,11 @@ packer.init({
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  -- use 'shaunsingh/nord.nvim'
-  -- use 'lifepillar/vim-gruvbox8'
-  -- use 'ghifarit53/tokyonight-vim'
-  -- use 'whatsthatsmell/codesmell_dark.vim'
-  -- use 'overcache/NeoSolarized'
-  -- use 'EdenEast/nightfox.nvim'
+  use 'whatsthatsmell/codesmell_dark.vim'
+  use 'overcache/NeoSolarized'
+  use 'EdenEast/nightfox.nvim'
+  use 'rose-pine/neovim'
+  use 'shaeinst/roshnivim-cs'
   use 'sainnhe/everforest'
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
   use {
@@ -56,6 +55,7 @@ return require('packer').startup(function(use)
     end
   }
   use 'cljoly/telescope-repo.nvim'
+  use 'nvim-telescope/telescope-file-browser.nvim'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
@@ -90,6 +90,7 @@ return require('packer').startup(function(use)
   use 'azabiong/vim-highlighter'
   use 'tpope/vim-surround'
   use 'stevearc/dressing.nvim'
+  use 'rcarriga/nvim-notify'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then require('packer').sync() end

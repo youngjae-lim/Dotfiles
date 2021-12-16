@@ -1,6 +1,6 @@
 require('lualine').setup({
   options = {
-    theme = 'everforest',
+    theme = 'codedark',
     section_separators = '',
     component_separators = ''
   }

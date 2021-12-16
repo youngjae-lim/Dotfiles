@@ -50,7 +50,8 @@ require('telescope').setup {
       override_file_sorter = true,
       case_mode = "smart_case" -- this is default
     },
-    bookmarks = {selected_browser = "google_chrome", url_open_command = "open"}
+    bookmarks = {selected_browser = "google_chrome", url_open_command = "open"},
+    file_browser = {}
   },
   defaults = {
     layout_config = {
@@ -120,6 +121,7 @@ require("telescope").load_extension("bookmarks")
 require("telescope").load_extension("neoclip")
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("repo")
+require("telescope").load_extension('file_browser')
 
 -- my telescopic customizations
 local M = {}
@@ -152,10 +154,10 @@ function M.find_notes()
 end
 
 function M.browse_webdev_projects()
-  require("telescope.builtin").file_browser {
+  require("telescope").extensions.file_browser.file_browser {
     prompt_title = " Browse WebDev Projects",
     prompt_prefix = " ﮷ ",
-    cwd = "~/Projects/Personal/Web-developments/",
+    path = "~/Projects/Personal/Web-developments/",
     layout_strategy = "horizontal",
     layout_config = {preview_width = 0.65, width = 0.75}
   }
