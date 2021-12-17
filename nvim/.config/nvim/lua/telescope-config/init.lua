@@ -51,7 +51,7 @@ require('telescope').setup {
       case_mode = "smart_case" -- this is default
     },
     bookmarks = {selected_browser = "google_chrome", url_open_command = "open"},
-    file_browser = {}
+    file_browser = {hidden = true}
   },
   defaults = {
     layout_config = {
@@ -78,7 +78,7 @@ require('telescope').setup {
     path_display = {},
     winblend = 0,
     border = {},
-    borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+    -- borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
     color_devicons = true,
     use_less = true,
     set_env = {['COLORTERM'] = 'truecolor'}, -- default = nil,
@@ -161,6 +161,32 @@ function M.browse_webdev_projects()
     layout_strategy = "horizontal",
     layout_config = {preview_width = 0.65, width = 0.75}
   }
+end
+
+function M.browse_nvim_config()
+  require("telescope").extensions.file_browser.file_browser {
+    prompt_title = " Browse Nvim Configs",
+    prompt_prefix = " ﮷ ",
+    path = "~/.config/nvim/",
+    layout_strategy = "horizontal",
+    layout_config = {preview_width = 0.65, width = 0.75}
+  }
+end
+
+-- grep_string pre-filtered from grep_prompt
+local function grep_filtered(opts)
+  opts = opts or {}
+  require("telescope.builtin").grep_string {
+    path_display = {"smart"},
+    search = opts.filter_word or ""
+  }
+end
+
+-- open vim.ui.input dressing prompt for initial filter
+function M.grep_prompt()
+  vim.ui.input({prompt = "Rg "}, function(input)
+    grep_filtered {filter_word = input}
+  end)
 end
 
 -- search todos

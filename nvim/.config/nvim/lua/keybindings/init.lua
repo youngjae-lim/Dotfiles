@@ -44,6 +44,9 @@ map("n", ",l",
 map("n", ",s",
     [[<Cmd>lua require'telescope.builtin'.live_grep({search_dirs={"%:p"}})<CR>]],
     {noremap = true, silent = true})
+-- Grep for a string
+map("n", ",e", [[<Cmd>lua require'telescope-config'.grep_prompt()<CR>]],
+    {noremap = true, silent = true})
 -- Search in Marks
 map("n", ",m",
     [[<Cmd>lua require'telescope.builtin'.marks({results_title='Marks Results'})<CR>]],
@@ -59,6 +62,9 @@ map("n", ",g",
 -- Browse notes
 map("n", ",p",
     [[<Cmd>lua require'telescope-config'.browse_webdev_projects()<CR>]],
+    {noremap = true, silent = true})
+-- Browse ~/.config.nvim/
+map("n", ",v", [[<Cmd>lua require'telescope-config'.browse_nvim_config()<CR>]],
     {noremap = true, silent = true})
 -- Search Google Chrome Bookmarks & Go
 map("n", ",b",
@@ -208,8 +214,7 @@ map("n", ";tf", [[<cmd>lua require('options.toggle').toggle_fold_col()<CR>]],
     {noremap = true, silent = true})
 
 -- current date time notify
-map("n", "<leader>dt",
-    ":lua require('funcs').notify_current_datetime()<CR>",
+map("n", "<leader>dt", ":lua require('funcs').notify_current_datetime()<CR>",
     {noremap = true, silent = true})
 
 -- Terminal windows mappings
