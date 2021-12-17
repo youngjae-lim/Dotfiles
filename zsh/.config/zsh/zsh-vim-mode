@@ -1,5 +1,9 @@
-# bindkey -e will be emacs mode
+# vim mode config
+#
+# Activate vim mode
 bindkey -v
+
+# Remove mode switching delay
 export KEYTIMEOUT=1
 
 # Use vim keys in tab complete menu:
@@ -23,5 +27,10 @@ zle-line-init() {
     echo -ne "\e[5 q"
 }
 zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+# echo -ne '\e[5 q' # Use beam shape cursor on startup.
+# preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+_fix_cursor() {
+    echo -ne '\e[5 q'
+}
+
+precmd_functions+=(_fix_cursor)

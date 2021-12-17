@@ -2,7 +2,7 @@ vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_width = 25
 -- following options are the default
 require'nvim-tree'.setup {
-  gitignore = true,
+  gitignore = false,
   -- disables netrw completely
   disable_netrw = true,
   -- hijack netrw window on startup
@@ -23,7 +23,7 @@ require'nvim-tree'.setup {
     auto_open = true
   },
   -- hijack the cursor in the tree to put it at the start of the filename
-  hijack_cursor = false,
+  hijack_cursor = true,
   -- 🔥 updates the root directory of the tree on `DirChanged` (when you run `:cd` usually)
   update_cwd = true,
   -- show lsp diagnostics in the signcolumn

@@ -14,6 +14,13 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = false})
 map('v', '<', '<gv', {noremap = true, silent = false})
 map('v', '>', '>gv', {noremap = true, silent = false})
 
+-- Discard change and quit for the current buffer
+map("n", "<leader>q", ":q!<CR>", {noremap = true, silent = true})
+-- Discard all changed buffers & quit
+map("n", "<leader>Q", ":qall!<CR>", {noremap = true, silent = true})
+-- write all and quit
+map("n", "<leader>W", ":wqall<CR>", {noremap = true, silent = true})
+
 ---------------------------------
 -- ** the Telescope comma maps **
 ---------------------------------
@@ -200,6 +207,11 @@ map("v", ";wl", [[c[<c-r>"]()<esc>]], {noremap = false})
 map("n", ";tf", [[<cmd>lua require('options.toggle').toggle_fold_col()<CR>]],
     {noremap = true, silent = true})
 
+-- current date time notify
+map("n", "<leader>dt",
+    ":lua require('funcs').notify_current_datetime()<CR>",
+    {noremap = true, silent = true})
+
 -- Terminal windows mappings
 -- It can be helpful to add mappings to make moving in and out of a terminal easier once toggled, whilst still keeping it open.
 function _G.set_terminal_keymaps()
@@ -211,7 +223,7 @@ function _G.set_terminal_keymaps()
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
 
 -- Turn a markdown file into a presentation pdf
 map('n', '<leader>mp', ':!buildPresentation.sh "%:p"<CR>',
