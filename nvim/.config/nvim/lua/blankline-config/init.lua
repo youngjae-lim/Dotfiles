@@ -1,7 +1,7 @@
 require("indent_blankline").setup {
   -- for example, context is off by default, use this to turn it on
   buftype_exclude = {"terminal"},
-  filetype_exclude = {"dashboard", "NvimTree", "packer"},
+  filetype_exclude = {"dashboard", "NvimTree", "packer", "help"},
   use_treesitter = true,
   show_current_context = true,
   context_patterns = {

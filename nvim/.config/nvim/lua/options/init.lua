@@ -29,6 +29,7 @@ local options_global_local = {
   timeoutlen = 300,
   clipboard = "unnamedplus",
   hlsearch = true,
+  incsearch = true,
   ignorecase = true,
   scrolloff = 3,
   sidescrolloff = 5,
