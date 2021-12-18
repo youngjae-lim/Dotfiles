@@ -20,6 +20,8 @@ map("n", "<leader>q", ":q!<CR>", {noremap = true, silent = true})
 map("n", "<leader>Q", ":qall!<CR>", {noremap = true, silent = true})
 -- write all and quit
 map("n", "<leader>W", ":wqall<CR>", {noremap = true, silent = true})
+-- Discard any changes to the current buffer
+map("n", "<leader>E", ":edit!<CR>", {noremap = true, silent = true})
 
 ---------------------------------
 -- ** the Telescope comma maps **

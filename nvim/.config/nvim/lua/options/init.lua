@@ -1,40 +1,69 @@
+-- don't call globals unneccessarily
+local o = vim.o -- > both global and local
+local bo = vim.bo -- > buffer only use bo
+local wo = vim.wo -- > window only use wo
+
+-- no need for a global function
+local set_options = function(locality, options)
+  for key, value in pairs(options) do locality[key] = value end
+end
+
+-- define our global local options
+-- Some buffers or windows always have a copy of their own, but others may not.
+-- So vim uses the current local option if set, otherwise, it uses the global option.
+local options_global_local = {
+  shortmess = vim.o.shortmess .. 'c',
+  hidden = true,
+  whichwrap = 'b,s,<,>,[,],h,l',
+  pumheight = 10,
+  fileencoding = 'utf-8',
+  cmdheight = 2,
+  splitbelow = true,
+  splitright = true,
+  conceallevel = 0,
+  showtabline = 2,
+  showmode = false,
+  backup = false,
+  writebackup = false,
+  updatetime = 300,
+  timeoutlen = 300,
+  clipboard = "unnamedplus",
+  hlsearch = true,
+  ignorecase = true,
+  scrolloff = 3,
+  sidescrolloff = 5,
+  mouse = "a",
+  cursorline = true,
+  tabstop = 4,
+  softtabstop = 4,
+  shiftwidth = 4,
+  autoindent = true,
+  expandtab = true
+}
+
+-- All buffers always have a copy of this setting.
+-- And so global options are only meaningful as the default value.
+local options_buffer = {
+  tabstop = 4,
+  shiftwidth = 4,
+  autoindent = true,
+  expandtab = true
+}
+-- All windows always have a copy of this setting.
+-- And so global options are only meaningful as the default value.
+local options_window = {
+  number = true,
+  signcolumn = "yes",
+  wrap = true,
+  linebreak = true
+}
+
+-- set locally. no need to call elsewhere
+set_options(o, options_global_local)
+set_options(bo, options_buffer)
+set_options(wo, options_window)
+
 vim.cmd('filetype plugin indent on')
 vim.cmd('set fillchars+=vert:│')
-vim.o.shortmess = vim.o.shortmess .. 'c'
-vim.o.hidden = true
-vim.o.whichwrap = 'b,s,<,>,[,],h,l'
-vim.o.pumheight = 10
-vim.o.fileencoding = 'utf-8'
-vim.o.cmdheight = 2
-vim.o.splitbelow = true
-vim.o.splitright = true
 vim.opt.termguicolors = true
-vim.o.conceallevel = 0
-vim.o.showtabline = 2
-vim.o.showmode = false
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.updatetime = 300
-vim.o.timeoutlen = 300
-vim.o.clipboard = "unnamedplus"
-vim.o.hlsearch = true
-vim.o.ignorecase = true
-vim.o.scrolloff = 3
-vim.o.sidescrolloff = 5
-vim.o.mouse = "a"
-vim.wo.wrap = false
-vim.wo.number = true
-vim.o.cursorline = true
-vim.wo.signcolumn = "yes"
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftwidth = 4
-vim.bo.shiftwidth = 4
-vim.o.autoindent = true
-vim.bo.autoindent = true
-vim.o.expandtab = true
-vim.bo.expandtab = true
-vim.wo.wrap = true
-vim.wo.linebreak = true
 vim.cmd("colorscheme rose-pine")
