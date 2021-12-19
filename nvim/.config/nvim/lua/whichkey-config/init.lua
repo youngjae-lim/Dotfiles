@@ -8,30 +8,26 @@ wk.setup {
       operators = false,
       motions = false,
       text_objects = false,
-      windows = false,
+      windows = true,
       nav = false,
       z = false,
       g = false
     }
+  },
+  window = {
+    border = "rounded", -- none, single, double, shadow
+    position = "bottom", -- bottom, top
+    margin = {1, 0, 1, 0}, -- extra window margin [top, right, bottom, left]
+    padding = {2, 2, 2, 2}, -- extra window padding [top, right, bottom, left]
+    winblend = 0
+  },
+  layout = {
+    height = {min = 4, max = 25}, -- min and max height of the columns
+    width = {min = 20, max = 50}, -- min and max width of the columns
+    spacing = 6, -- spacing between columns
+    align = "left" -- align columns left, center or right
   }
 }
-
--- Floating terminal by toggleterm
-local Terminal = require('toggleterm.terminal').Terminal
-local toggle_float = function()
-  local float = Terminal:new({direction = "float"})
-  return float:toggle()
-end
--- Floating lazygit by toggleterm
-local toggle_lazygit = function()
-  local lazygit = Terminal:new({cmd = "lazygit", direction = "float"})
-  return lazygit:toggle()
-end
--- Floating notetaker by toggleterm
-local toggle_notetaker = function()
-  local notetaker = Terminal:new({cmd = "notetaker.sh", direction = "float"})
-  return notetaker:toggle()
-end
 
 -- @TODO: organize which-keys
 local mappings = {
@@ -81,11 +77,12 @@ local mappings = {
   t = {
     name = "Toggle",
     t = {":ToggleTerm<cr>", "Split Below"},
-    f = {toggle_float, "Floating Terminal"},
-    l = {toggle_lazygit, "Floating Lazygit"},
-    n = {toggle_notetaker, "Floating Notetaker"}
+    f = {"<cmd>lua _TOGGLE_FLOAT()<CR>", "Floating Terminal"},
+    l = {"<cmd>lua _TOGGLE_LAZYGIT()<CR>", "Floating Lazygit"},
+    n = {"<cmd>lua _TOGGLE_NOTETAKER()<CR>", "Floating Notetaker"}
   }
 }
+
 local opts = {prefix = '<leader>'}
 wk.register(mappings, opts)
 

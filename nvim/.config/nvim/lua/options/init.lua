@@ -24,7 +24,7 @@ local options_global_local = {
   showtabline = 2,
   showmode = false,
   backup = false,
-  writebackup = false,
+  writebackup = false, -- Don't allow to write a file if the file is being edited by another program.
   updatetime = 300,
   timeoutlen = 300,
   clipboard = "unnamedplus",
@@ -34,10 +34,10 @@ local options_global_local = {
   scrolloff = 3,
   sidescrolloff = 5,
   mouse = "a",
-  cursorline = true,
-  tabstop = 4,
-  softtabstop = 4,
-  shiftwidth = 4,
+  cursorline = true, -- It looks like only a few colorscheme support this options.
+  tabstop = 2,
+  softtabstop = 2,
+  shiftwidth = 2,
   autoindent = true,
   expandtab = true
 }
@@ -45,8 +45,9 @@ local options_global_local = {
 -- All buffers always have a copy of this setting.
 -- And so global options are only meaningful as the default value.
 local options_buffer = {
-  tabstop = 4,
-  shiftwidth = 4,
+  tabstop = 2,
+  softtabstop = 2,
+  shiftwidth = 2,
   autoindent = true,
   expandtab = true
 }
@@ -66,5 +67,7 @@ set_options(wo, options_window)
 
 vim.cmd('filetype plugin indent on')
 vim.cmd('set fillchars+=vert:│')
+vim.cmd('set iskeyword+=-') -- Delete a work with dashes as a single word.
 vim.opt.termguicolors = true
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme codesmell_dark")
+vim.cmd("colorscheme everforest")
