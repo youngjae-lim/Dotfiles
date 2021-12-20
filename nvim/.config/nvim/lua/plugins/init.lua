@@ -91,7 +91,22 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'stevearc/dressing.nvim'
   use 'rcarriga/nvim-notify'
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup()
+    end
+  }
+  use 'folke/lua-dev.nvim'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
+  use {
+    'folke/todo-comments.nvim',
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup()
+    end
+  }
   if PACKER_BOOTSTRAP then require('packer').sync() end
 end)

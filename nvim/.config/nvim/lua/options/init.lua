@@ -31,6 +31,7 @@ local options_global_local = {
   hlsearch = true,
   incsearch = true,
   ignorecase = true,
+  foldcolumn = "1",
   scrolloff = 3,
   sidescrolloff = 5,
   mouse = "a",

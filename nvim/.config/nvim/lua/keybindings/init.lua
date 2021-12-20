@@ -98,42 +98,8 @@ map("n", ",i",
 map("n", ",z",
     [[<Cmd>lua require'telescope-config.directory_picker'.directory_picker()<CR>]],
     {noremap = true, silent = true})
---------------------------------------
--- ** the Telescope <leader>s maps **
---------------------------------------
--- show LSP diagnostics for all open buffers
-map("n", "<leader>sG", [[<Cmd>Telescope diagnostics<CR>]],
-    {noremap = true, silent = true})
--- show LSP diagnostics for the current buffer
-map("n", "<leader>sg", [[<Cmd>Telescope diagnostics bufnr=0<CR>]],
-    {noremap = true, silent = true})
--- show LSP document symbols(function, property, variable, etc) in the current buffer
-map("n", "<leader>ss",
-    [[<Cmd>lua require'telescope.builtin'.lsp_document_symbols()<CR>]],
-    {noremap = true, silent = true})
--- show LSP document symbols(function, property, variable, etc) in the current workspace
-map("n", "<leader>sw",
-    [[<Cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>]],
-    {noremap = true, silent = true})
--- show LSP references for word under the cursor
-map("n", "<leader>sr",
-    [[<Cmd>lua require'telescope.builtin'.lsp_references()<CR>]],
-    {noremap = true, silent = true})
--- show LSP implementations - go to the implementation of the word under the cursor if there's only one, otherwise show all options
-map("n", "<leader>si",
-    [[<Cmd>lua require'telescope.builtin'.lsp_implementations()<CR>]],
-    {noremap = true, silent = true})
--- show LSP definitions - go to the definition of the word under the cursor, if there's only one, otherwise show all options
-map("n", "<leader>sd",
-    [[<Cmd>lua require'telescope.builtin'.lsp_definitions({layout_config = { preview_width = 0.50, width = 0.92 }, path_display = { "shorten" }, results_title='Definitions'})<CR>]],
-    {noremap = true, silent = true})
--- show LSP code actions - lists any LSP actions for the word under the cursor, that can be triggered with <cr>
-map("n", "<leader>sc",
-    [[<Cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>]],
-    {noremap = true, silent = true})
 -- search @TODOs
-map("n", "<leader>st",
-    [[<Cmd>lua require'telescope-config'.search_todos()<CR>]],
+map("n", ",t", [[<Cmd>lua require'telescope-config'.search_todos()<CR>]],
     {noremap = true, silent = true})
 
 -- Yank from the curent position to the end of line

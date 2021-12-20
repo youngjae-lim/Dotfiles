@@ -31,58 +31,83 @@ wk.setup {
 
 -- @TODO: organize which-keys
 local mappings = {
-  x = {":bdelete<cr>", "Close"},
-  E = {":e ~/.config/nvim/init.lua<cr>", "Edit nvim config"},
-  f = {":Telescope find_files<cr>", "Telescope Find Files"},
-  r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
+  x = {":bdelete<CR>", "Close"},
+  E = {":e ~/.config/nvim/init.lua<CR>", "Edit nvim config"},
+  f = {":Telescope find_files<CR>", "Telescope Find Files"},
+  r = {":Telescope live_grep<CR>", "Telescope Live Grep"},
   b = {
-    "<cmd>lua require(\"telescope\").extensions.file_browser.file_browser() <cr>",
+    "<cmd>lua require(\"telescope\").extensions.file_browser.file_browser() <CR>",
     "Telescope File Browser"
   },
-  O = {"<cmd>!mostRecentNote.sh<cr>", "Open Most Recent Note in PDF"},
+  O = {"<cmd>!mostRecentNote.sh<CR>", "Open Most Recent Note in PDF"},
+  -- LSP-related keybindings
   l = {
     name = "LSP",
-    i = {":LspInfo<cr>", "Connected Language Servers"},
-    w = {
-      '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "Add Workspace Folder"
+    -- show LSP code actions - lists any LSP actions for the word under the cursor, that can be triggered with <CR>
+    a = {
+      "<Cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>",
+      "Code Actions"
     },
-    W = {
-      '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
-      "Remove Workspace Folder"
+    -- show LSP definitions - go to the definition of the word under the cursor, if there's only one, otherwise show all options
+    d = {
+      "<Cmd>lua require'telescope.builtin'.lsp_definitions({layout_config = { preview_width = 0.50, width = 0.92 }, path_display = { 'shorten' }, results_title='Definitions'})<CR>",
+      "Go To Definitions"
     },
-    l = {
-      '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
-      "List Workspace Folder"
+    -- List LSP diagnostics for the current buffer
+    g = {
+      "<Cmd>lua require'telescope.builtin'.diagnostics({bufnr = 0})<CR>",
+      "List Diagnostics @Current Buffer"
     },
-    t = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type Definition"},
-    d = {'<cmd>lua vim.lsp.buf.definition()<CR>', "Go to Definition"},
-    D = {'<cmd>lua vim.lsp.buf.declaration()<CR>', "Go to Declaration"},
-    r = {'<cmd>lua vim.lsp.buf.references()<CR>', "References"}, -- Better use telescope builtin
-    R = {'<cmd>lua vim.lsp.buf.rename()<CR>', "Rename"},
+    -- List LSP diagnostics for all open buffers
+    G = {
+      "<Cmd>lua require'telescope.builtin'.diagnostics()<CR>",
+      "List Diagnotics for All Open Buffers"
+    },
+    -- Display hover information abuot the symbol under the cursor in a floating window.
     h = {'<cmd>lua vim.lsp.buf.hover()<CR>', "Hover"},
+    i = {":LspInfo<CR>", "Connected Language Servers"},
+    I = {":LspInstallInfo<CR>", "Install Info"},
+    -- List LSP references for word under the cursor
+    r = {
+      "<Cmd>lua require'telescope.builtin'.lsp_references()<CR>",
+      "Show References"
+    },
+    -- Rename all references to the symbol under the cursor.
+    R = {'<cmd>lua vim.lsp.buf.rename()<CR>', "Rename"},
+    -- Display signature information about the symbol under the cursor in a floating window.
     s = {'<cmd>lua vim.lsp.buf.signature_help()<CR>', "Signature Help"},
-    a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', "Code Actions"},
-    e = {
-      '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
-      "Show Line Diagnostics"
-    }, -- Better use telescope builtin
-    n = {
-      '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', "Go To Next Diagnostics"
-    }, -- Better use telescope builtin
-    N = {
-      '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', "Go To Prev Diagnostics"
-    }, -- Better use telescope builtin
-    q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show Loclist"}
+    -- show LSP document symbols(function, property, variable, etc) in the current buffer
+    y = {
+      "<Cmd>lua require'telescope.builtin'.lsp_document_symbols()<CR>",
+      "List Symbols @Current Buffer"
+    },
+    -- show LSP document symbols(function, property, variable, etc) in the current workspace
+    Y = {
+      "<Cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>",
+      "List Symbols @Current Workspace"
+    }
   },
+
+  -- Terminal-related keybindings
   t = {
-    name = "Toggle",
-    t = {":ToggleTerm<cr>", "Split Below"},
+    name = "Terminal",
+    t = {":ToggleTerm<CR>", "Split Below"},
     f = {"<cmd>lua _TOGGLE_FLOAT()<CR>", "Floating Terminal"},
     l = {"<cmd>lua _TOGGLE_LAZYGIT()<CR>", "Floating Lazygit"},
     n = {"<cmd>lua _TOGGLE_NOTETAKER()<CR>", "Floating Notetaker"}
+  },
+
+  -- Trouble keybindings
+  T = {
+    name = "Trouble",
+    t = {"<cmd>Trouble<CR>", "Trouble"},
+    w = {"<cmd>Trouble workspace_diagnostics<CR>", "Workspace Diagnotics"},
+    d = {"<cmd>Trouble document_diagnostics<CR>", "Document Diagnotics"},
+    l = {"<cmd>Trouble loclist<CR>", "Location List"},
+    q = {"<cmd>Trouble quickfix<CR>", "Quickfix List"},
+    r = {"<cmd>Trouble lsp_references<CR>", "References"}
   }
 }
 
 local opts = {prefix = '<leader>'}
 wk.register(mappings, opts)
-

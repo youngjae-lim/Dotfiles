@@ -26,16 +26,26 @@ local autocmds = {
       "BufWritePost", "*/nvim/lua/plugins/init.lua",
       "source <afile> | PackerSync"
     }
+  },
+  -- Use q to close for a set of these filetypes
+  q_to_close = {
+    {
+      "FileType", "qf,help,man,lspinfo",
+      "nnoremap <silent> <buffer> q :close<CR>"
+    }
+  },
+  -- Save and Load view (mainly for folds)
+  save_load_view = {
+    {"BufWinLeave", "*.*", "mkview"}, {"BufWinEnter", "*.*", "silent loadview"}
+  },
+  -- Highlight on yank for 2 seconds
+  highlight_on_yank = {
+    {
+      "TextYankPost", "*",
+      "silent! lua vim.highlight.on_yank({higroup = 'Visual', timeout = 2000})"
+    }
   }
 }
 
 nvim_create_augroups(autocmds)
 -- autocommands END
-
--- Highlight on yank
-vim.api.nvim_exec([[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-  augroup end
-]], false)
