@@ -36,7 +36,8 @@ local autocmds = {
   },
   -- Save and Load view (mainly for folds)
   save_load_view = {
-    {"BufWinLeave", "*.*", "mkview"}, {"BufWinEnter", "*.*", "silent loadview"}
+    {"BufWinLeave", "*.*", "if &buftype != 'terminal' | mkview"},
+    {"BufWinEnter", "*.*", "if &buftype != 'terminal' | silent loadview"}
   },
   -- Highlight on yank for 2 seconds
   highlight_on_yank = {
