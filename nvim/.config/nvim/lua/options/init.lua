@@ -71,4 +71,4 @@ vim.cmd('set fillchars+=vert:│')
 vim.cmd('set iskeyword+=-') -- Delete a work with dashes as a single word.
 vim.opt.termguicolors = true
 vim.cmd("colorscheme codesmell_dark")
-vim.cmd("colorscheme everforest")
+vim.cmd("colorscheme codedark")
