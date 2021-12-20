@@ -1,10 +1,8 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    "html", "javascript", "typescript", "lua", "go", "rust", "toml", "yaml",
-    "css", "scss", "graphql", "python", "svelte", "gomod", "json", "dockerfile",
-    "latex", "tsx", "vue", "vim", "markdown", "bash", "bibtex", "dot", "http",
-    "make", "regex"
-  }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then return end
+
+configs.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true, -- false will disable the whole extension
     additional_vim_regex_highlighting = false
@@ -18,5 +16,6 @@ require'nvim-treesitter.configs'.setup {
     -- termcolors = {} -- table of colour name strings
   },
   autopairs = {enable = true},
-  indent = {enable = true}
+  indent = {enable = true},
+  context_commentstring = {enable = true, enable_autocmd = false}
 }

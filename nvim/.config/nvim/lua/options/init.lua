@@ -35,6 +35,7 @@ local options_global_local = {
   scrolloff = 3,
   sidescrolloff = 5,
   mouse = "a",
+  swapfile = false,
   cursorline = true, -- It looks like only a few colorscheme support this options.
   tabstop = 2,
   softtabstop = 2,
@@ -68,7 +69,6 @@ set_options(wo, options_window)
 
 vim.cmd('filetype plugin indent on')
 vim.cmd('set fillchars+=vert:│')
-vim.cmd('set iskeyword+=-') -- Delete a work with dashes as a single word.
+vim.cmd('set iskeyword+=-') -- Delete a word with dashes as a single word.
 vim.opt.termguicolors = true
-vim.cmd("colorscheme codesmell_dark")
-vim.cmd("colorscheme apprentice")
+vim.cmd("colorscheme PaperColor")

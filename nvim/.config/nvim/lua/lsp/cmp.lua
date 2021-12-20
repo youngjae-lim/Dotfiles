@@ -57,7 +57,7 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     {name = 'buffer'}, {name = 'nvim_lsp'}, {name = 'vsnip'}, -- For vsnip users.
-    {name = 'path'}, {name = 'latex_symbols'}
+    {name = 'path'}, {name = 'latex_symbols'}, {name = 'treesitter'}
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For utisnips users.
     -- { name = 'snippy' }, -- For snippy users.

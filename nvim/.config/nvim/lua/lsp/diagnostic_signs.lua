@@ -11,7 +11,3 @@ Border = {
   {"│", "FloatBorder"}, {"╯", "FloatBorder"}, {"─", "FloatBorder"},
   {"╰", "FloatBorder"}, {"│", "FloatBorder"}
 }
-
-vim.api.nvim_command(
-    "autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({border="
-        .. vim.inspect(Border) .. ", focusable=false})")
