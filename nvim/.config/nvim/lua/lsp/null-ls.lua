@@ -10,6 +10,7 @@ local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup {
 	debug = false,
+	-- TODO: Add corresponding formatters(linters) and diagnostics to the language servers installed!
 	sources = {
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/prettier.lua
 		formatting.prettier.with {
@@ -19,7 +20,9 @@ null_ls.setup {
 		formatting.black.with { extra_args = { "--fast" } },
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/stylua.lua
 		formatting.stylua,
+		-- diagnostics.luacheck,
 		formatting.rustfmt,
+		formatting.gofmt,
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then

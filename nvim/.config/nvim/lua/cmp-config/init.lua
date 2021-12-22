@@ -1,8 +1,6 @@
--- vim.g.completeopt = "menu,menuone,noselect,noinsert"
-
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
 end
 
 local feedkey = function(key, mode)
@@ -10,10 +8,10 @@ local feedkey = function(key, mode)
 end
 
 -- Setup nvim-cmp.
-local cmp = require("cmp")
-local lspkind = require("lspkind")
+local cmp = require "cmp"
+local lspkind = require "lspkind"
 
-cmp.setup({
+cmp.setup {
 	snippet = {
 		expand = function(args)
 			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
@@ -29,7 +27,7 @@ cmp.setup({
 		["<C-o>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.close(),
 		["<C-y>"] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<CR>"] = cmp.mapping.confirm { select = true },
 
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
@@ -51,7 +49,7 @@ cmp.setup({
 			end
 		end, { "i", "s" }),
 	},
-	sources = cmp.config.sources({ -- order matters for the best possible search results
+	sources = cmp.config.sources { -- order matters for the best possible search results
 		{ name = "nvim_lsp" },
 		-- { name = "nvim_lua" },
 		{ name = "buffer" },
@@ -62,13 +60,13 @@ cmp.setup({
 		-- { name = 'luasnip' }, -- For luasnip users.
 		-- { name = 'ultisnips' }, -- For utisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
-	}),
+	},
 	documentation = {
 		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" }, -- order of items shown in the completion
-		format = lspkind.cmp_format({
+		format = lspkind.cmp_format {
 			with_text = true,
 			menu = {
 				nvim_lsp = "[LSP]",
@@ -80,9 +78,9 @@ cmp.setup({
 				latex_symbols = "[LaTeX]",
 			},
 			maxwidth = 50,
-		}),
+		},
 	},
-})
+}
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline("/", { sources = { { name = "buffer" } } })
@@ -91,15 +89,15 @@ cmp.setup.cmdline("/", { sources = { { name = "buffer" } } })
 cmp.setup.cmdline(":", {
 	sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
 	mapping = {
-		["<C-n>"] = cmp.mapping.select_next_item({
+		["<C-n>"] = cmp.mapping.select_next_item {
 			behavior = cmp.SelectBehavior.Insert,
-		}),
-		["<C-p>"] = cmp.mapping.select_prev_item({
+		},
+		["<C-p>"] = cmp.mapping.select_prev_item {
 			behavior = cmp.SelectBehavior.Insert,
-		}),
-		["<CR>"] = cmp.mapping.confirm({
+		},
+		["<CR>"] = cmp.mapping.confirm {
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
-		}),
+		},
 	},
 })
