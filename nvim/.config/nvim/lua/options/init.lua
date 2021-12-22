@@ -14,6 +14,7 @@ end
 local options_global_local = {
   shortmess = vim.o.shortmess .. 'c',
   hidden = true,
+  completeopt = "menu,menuone,noselect,noinsert",
   whichwrap = 'b,s,<,>,[,],h,l',
   pumheight = 10,
   fileencoding = 'utf-8',
@@ -71,4 +72,4 @@ vim.cmd('filetype plugin indent on')
 vim.cmd('set fillchars+=vert:│')
 vim.cmd('set iskeyword+=-') -- Delete a word with dashes as a single word.
 vim.opt.termguicolors = true
-vim.cmd("colorscheme PaperColor")
+vim.cmd("colorscheme OceanicNext")
