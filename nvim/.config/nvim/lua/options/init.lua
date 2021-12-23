@@ -72,4 +72,4 @@ vim.cmd('filetype plugin indent on')
 vim.cmd('set fillchars+=vert:│')
 vim.cmd('set iskeyword+=-') -- Delete a word with dashes as a single word.
 vim.opt.termguicolors = true
-vim.cmd("colorscheme OceanicNext")
+vim.cmd("colorscheme darkplus")

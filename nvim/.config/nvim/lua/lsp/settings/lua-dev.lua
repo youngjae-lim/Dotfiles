@@ -14,9 +14,14 @@ M.luadev = require("lua-dev").setup {
 				diagnostics = {
 					globals = { "hs" },
 				},
+				workspace = {
+					preloadFileSize = 350,
+				},
 			},
 		},
 	},
 }
+-- TODO: take a look at what M.luadev variable is passing to lsp-installer.lua
+P(M.luadev)
 
 return M

@@ -55,7 +55,7 @@ local function lsp_highlight_document(client)
 	end
 end
 
--- TODO: do I really nedd thses extra redundant keybindings?
+-- TODO: do I really need thses extra redundant keybindings?
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -80,6 +80,14 @@ local function lsp_keymaps(bufnr)
 	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
+-- Attach 'format on save' functionality for the servers that are not part of null-ls
+local function lsp_format_on_save(client)
+	if client.resolved_capabilities.document_formatting then
+		-- Save on format
+		vim.cmd "autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()"
+	end
+end
+
 M.on_attach = function(client, bufnr)
 	-- TODO: if statement will be getting longer in the future as formatters are reduntant in some of language servers and null-ls. So I need to think about how to make this more pretty and efficient. Or I could just default to false for all servers, so that null-ls acts as a default diagnostic and formatting tools.
 	if client.name == "tsserver" or client.name == "jsonls" or client.name == "rust_analyzer" then
@@ -88,11 +96,14 @@ M.on_attach = function(client, bufnr)
 		client.resolved_capabilities.document_formatting = false
 		client.resolved_capabilities.document_range_formatting = false
 	end
-	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
+	lsp_keymaps(bufnr)
+	lsp_format_on_save(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- for emmet_ls server: https://github.com/aca/emmet-ls#configuration
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then

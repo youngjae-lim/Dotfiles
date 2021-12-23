@@ -14,14 +14,37 @@ null_ls.setup {
 	sources = {
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/prettier.lua
 		formatting.prettier.with {
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"vue",
+				"css",
+				"scss",
+				"less",
+				"html",
+				"json",
+				"yaml",
+				"markdown",
+				"graphql",
+			},
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 		},
+
+		-- Python
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/black.lua
 		formatting.black.with { extra_args = { "--fast" } },
+
+		-- Lua
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/stylua.lua
 		formatting.stylua,
-		-- diagnostics.luacheck,
+		diagnostics.luacheck.with { extra_args = { "--globals vim hs" } },
+
+		-- Rust
 		formatting.rustfmt,
+
+		-- Go
 		formatting.gofmt,
 	},
 	on_attach = function(client)

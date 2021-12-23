@@ -41,6 +41,7 @@ return require("packer").startup(function(use)
 	use "wbthomason/packer.nvim"
 
 	-- Colorschemes
+	use "lunarvim/darkplus.nvim"
 	use "whatsthatsmell/codesmell_dark.vim"
 	use "overcache/NeoSolarized"
 	use "EdenEast/nightfox.nvim"
@@ -51,6 +52,9 @@ return require("packer").startup(function(use)
 	-- Treesitter-related plugins
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use "JoosepAlviste/nvim-ts-context-commentstring"
+	use "windwp/nvim-ts-autotag"
+	use "p00f/nvim-ts-rainbow"
+
 	-- UI-related plugins
 	use {
 		"nvim-lualine/lualine.nvim",
@@ -58,8 +62,6 @@ return require("packer").startup(function(use)
 	}
 	use { "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" }
 	use { "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" }
-	use "windwp/nvim-ts-autotag"
-	use "p00f/nvim-ts-rainbow"
 	use "windwp/nvim-autopairs"
 	use "norcalli/nvim-colorizer.lua"
 	use "lukas-reineke/indent-blankline.nvim"
