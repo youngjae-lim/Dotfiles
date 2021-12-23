@@ -46,6 +46,10 @@ null_ls.setup {
 
 		-- Go
 		formatting.gofmt,
+
+		-- Shell
+		formatting.shfmt,
+		diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
