@@ -10,18 +10,24 @@ lsp_installer.on_server_ready(function(server)
 		on_attach = require("lsp.handlers").on_attach,
 		capabilities = require("lsp.handlers").capabilities,
 	}
-	-- Feel free to add any customized settings for each language
+
+	----------------------------------------------------------------
+	-- Feel free to add any customized settings for each language --
+	----------------------------------------------------------------
+
+	-- jsonls
 	if server.name == "jsonls" then
 		local jsonls_opts = require "lsp.settings.jsonls"
 		opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
 	end
 
-	-- Use lua-dev.nvim
+	-- Lua
 	if server.name == "sumneko_lua" then
 		local luadev_opts = require("lsp.settings.lua-dev").luadev
 		opts = vim.tbl_deep_extend("force", luadev_opts, opts)
 	end
 
+	-- Rust
 	-- https://github.com/williamboman/nvim-lsp-installer/wiki/Rust
 	if server.name == "rust_analyzer" then
 		-- Initialize the LSP via rust-tools instead
@@ -36,17 +42,18 @@ lsp_installer.on_server_ready(function(server)
 		server:attach_buffers()
 	end
 
-	-- ls_emmet server
+	-- ls_emmet
 	if server.name == "emmet_ls" then
 		local ls_emmet_opts = require "lsp.settings.ls_emmet"
 		opts = vim.tbl_deep_extend("force", ls_emmet_opts, opts)
 	end
 
-	-- tailwindcss server
+	-- tailwindcss
 	if server.name == "tailwindcss" then
 		local tailwindcss = require "lsp.settings.tailwindcss"
 		opts = vim.tbl_deep_extend("force", tailwindcss, opts)
 	end
+
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	-- Sets up the language server and attaches all open buffers

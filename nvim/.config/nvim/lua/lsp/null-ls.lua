@@ -26,14 +26,20 @@ null_ls.setup {
 				"html",
 				"json",
 				"yaml",
-				"markdown",
+				-- "markdown",
 				"graphql",
 			},
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 		},
 
+		------------------------------------------------------------------------
+		-- Make sure you install all of the corresponding formatter and linters
+		-- in your machine and make them available in your PATH.
+		------------------------------------------------------------------------
+
 		-- Python
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/black.lua
+		-- diagnostics will be done by pyright language server.
 		formatting.black.with { extra_args = { "--fast" } },
 
 		-- Lua
@@ -46,10 +52,16 @@ null_ls.setup {
 
 		-- Go
 		formatting.gofmt,
+		diagnostics.golangci_lint,
 
 		-- Shell
 		formatting.shfmt,
 		diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
+
+		-- Markdown
+		-- Make sure you install https://github.com/igorshubovych/markdownlint-cli
+		formatting.markdownlint,
+		diagnostics.markdownlint, -- grammarly language server will be supporting markdown as well
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then

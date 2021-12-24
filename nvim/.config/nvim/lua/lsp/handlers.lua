@@ -32,10 +32,15 @@ M.setup = function()
 		},
 	}
 
+	-- Configure diagnostic options globally
 	vim.diagnostic.config(config)
 
+	-- lsp-handlers are functions with special signatures that are designed to handle
+	-- responses and notifications from LSP servers.
+	-- The vim.lsp.handlers table defines default handlers used
+	-- when creating a new client. Keys are LSP method names:
+	-- :lua print(vim.inspect(vim.tbl_keys(vim.lsp.handlers)))
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 end
 
@@ -62,14 +67,10 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(
 		bufnr,
 		"n",
@@ -77,8 +78,10 @@ local function lsp_keymaps(bufnr)
 		'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
 		opts
 	)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
@@ -90,9 +93,15 @@ local function lsp_format_on_save(client)
 	end
 end
 
+-- Callback (client, bufnr) invoked when client attaches to a buffer
 M.on_attach = function(client, bufnr)
 	-- TODO: if statement will be getting longer in the future as formatters are reduntant in some of language servers and null-ls. So I need to think about how to make this more pretty and efficient. Or I could just default to false for all servers, so that null-ls acts as a default diagnostic and formatting tools.
-	if client.name == "tsserver" or client.name == "jsonls" or client.name == "rust_analyzer" then
+	if
+		client.name == "tsserver"
+		or client.name == "jsonls"
+		or client.name == "rust_analyzer"
+		or client.name == "gopls"
+	then
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
 		-- null-ls will take care of formatting any languages included in tsserver
 		client.resolved_capabilities.document_formatting = false
@@ -103,6 +112,8 @@ M.on_attach = function(client, bufnr)
 	lsp_format_on_save(client)
 end
 
+-- Map overriding the default capabilities defined by vim.lsp.protocol.make_client_capabilities(),
+-- passed to the language server on initialization.
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- for emmet_ls server: https://github.com/aca/emmet-ls#configuration
 capabilities.textDocument.completion.completionItem.snippetSupport = true

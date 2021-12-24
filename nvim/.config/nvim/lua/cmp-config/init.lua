@@ -1,3 +1,4 @@
+-- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#vim-vsnip
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
@@ -22,13 +23,17 @@ cmp.setup {
 	},
 
 	mapping = {
-		["<C-d>"] = cmp.mapping.scroll_docs(-4),
-		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-o>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.close(),
+		["<C-k>"] = cmp.mapping.select_prev_item(),
+		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-2), { "i", "c" }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(2), { "i", "c" }),
+		["<C-O>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- invoke completion without any typing
+		["<C-e>"] = cmp.mapping {
+			i = cmp.mapping.abort(),
+			c = cmp.mapping.close(),
+		},
 		["<C-y>"] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
 		["<CR>"] = cmp.mapping.confirm { select = true },
-
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -49,6 +54,7 @@ cmp.setup {
 			end
 		end, { "i", "s" }),
 	},
+	-- more sources: https://github.com/topics/nvim-cmp
 	sources = cmp.config.sources { -- order matters for the best possible search results
 		{ name = "nvim_lsp" },
 		-- { name = "nvim_lua" },

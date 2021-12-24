@@ -168,9 +168,6 @@ map("n", "<S-right>", ":vertical resize +2<CR>", { noremap = true, silent = fals
 -- Easy align (type 'vipga' = this selects a paragraph and invokes :EasyAlign command)
 map("x", "ga", ":EasyAlign", { noremap = false, silent = true })
 
--- Remap gs to type out the global substitution command and put your cursor in position to type what you want to find/replace
-map("n", "gs", ":%s//g<Left><Left>", { noremap = false, silent = true })
-
 -- Replace word under cursor in Buffer (case-sensitive)
 map("n", ";sb", ":%s/<C-R><C-W>//gI<left><left><left>", { noremap = false })
 -- Replace word under cursor on Line (case-sensitive)
