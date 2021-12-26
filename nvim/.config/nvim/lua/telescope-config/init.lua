@@ -1,5 +1,5 @@
-local actions = require("telescope.actions")
-local action_state = require("telescope.actions.state")
+local actions = require "telescope.actions"
+local action_state = require "telescope.actions.state"
 local custom_actions = {}
 
 function custom_actions._multiopen(prompt_bufnr, open_cmd)
@@ -12,11 +12,11 @@ function custom_actions._multiopen(prompt_bufnr, open_cmd)
 		else
 			cwd = string.format("%s/", cwd)
 		end
-		vim.cmd("bw!")
+		vim.cmd "bw!"
 		for _, entry in ipairs(picker:get_multi_selection()) do
 			vim.cmd(string.format("%s %s%s", open_cmd, cwd, entry.value))
 		end
-		vim.cmd("stopinsert")
+		vim.cmd "stopinsert"
 	else
 		if open_cmd == "vsplit" then
 			actions.file_vsplit(prompt_bufnr)
@@ -42,7 +42,7 @@ function custom_actions.multi_selection_open(prompt_bufnr)
 	custom_actions._multiopen(prompt_bufnr, "edit")
 end
 
-require("telescope").setup({
+require("telescope").setup {
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
@@ -116,16 +116,16 @@ require("telescope").setup({
 			},
 		},
 	},
-})
+}
 
 -- Extensions --
 
 -- https://github.com/dhruvmanila/telescope-bookmarks.nvim
-require("telescope").load_extension("bookmarks")
-require("telescope").load_extension("neoclip")
-require("telescope").load_extension("fzf")
-require("telescope").load_extension("repo")
-require("telescope").load_extension("file_browser")
+require("telescope").load_extension "bookmarks"
+require("telescope").load_extension "neoclip"
+require("telescope").load_extension "fzf"
+require("telescope").load_extension "repo"
+require("telescope").load_extension "file_browser"
 
 -- my telescopic customizations
 local M = {}
@@ -148,60 +148,60 @@ function M.grep_notes()
 end
 
 function M.find_notes()
-	require("telescope.builtin").find_files({
+	require("telescope.builtin").find_files {
 		prompt_title = " Find Notes",
 		path_display = { "smart" },
 		cwd = "~/Google Drive/My Drive/Notes/",
 		layout_strategy = "horizontal",
 		layout_config = { preview_width = 0.65, width = 0.75 },
-	})
+	}
 end
 
 function M.browse_webdev_projects()
-	require("telescope").extensions.file_browser.file_browser({
+	require("telescope").extensions.file_browser.file_browser {
 		prompt_title = " Browse WebDev Projects",
 		prompt_prefix = " ﮷ ",
 		path = "~/Projects/Personal/Web-developments/",
 		layout_strategy = "horizontal",
 		layout_config = { preview_width = 0.65, width = 0.75 },
-	})
+	}
 end
 
 function M.browse_nvim_config()
-	require("telescope").extensions.file_browser.file_browser({
+	require("telescope").extensions.file_browser.file_browser {
 		prompt_title = " Browse Nvim Configs",
 		prompt_prefix = " ﮷ ",
 		path = "~/.config/nvim/",
 		layout_strategy = "horizontal",
 		layout_config = { preview_width = 0.65, width = 0.75 },
-	})
+	}
 end
 
 -- grep_string pre-filtered from grep_prompt
 local function grep_filtered(opts)
 	opts = opts or {}
-	require("telescope.builtin").grep_string({
+	require("telescope.builtin").grep_string {
 		path_display = { "smart" },
 		search = opts.filter_word or "",
-	})
+	}
 end
 
 -- open vim.ui.input dressing prompt for initial filter
 function M.grep_prompt()
 	vim.ui.input({ prompt = "Rg " }, function(input)
-		grep_filtered({ filter_word = input })
+		grep_filtered { filter_word = input }
 	end)
 end
 
 -- search todos
 function M.search_todos()
-	require("telescope.builtin").grep_string({
+	require("telescope.builtin").grep_string {
 		prompt_title = " Search @TODOs",
 		prompt_prefix = " ",
 		results_title = "@TODOs Results",
 		path_display = { "smart" },
 		search = "TODO:",
-	})
+	}
 end
 
 return M

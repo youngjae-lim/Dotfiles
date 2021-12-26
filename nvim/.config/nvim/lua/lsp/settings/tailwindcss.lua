@@ -1,5 +1,4 @@
 return {
-	-- overwrite the original path that is used by lsp-installer
 	filetypes = {
 		"astro",
 		"astro-markdown",
@@ -24,5 +23,19 @@ return {
 		"vue",
 		"svelte",
 	},
-	settings = {},
+	settings = {
+		ailwindCSS = {
+			classAttributes = { "class", "className", "classList", "ngClass" },
+			lint = {
+				cssConflict = "warning",
+				invalidApply = "error",
+				invalidConfigPath = "error",
+				invalidScreen = "error",
+				invalidTailwindDirective = "error",
+				invalidVariant = "error",
+				recommendedVariantOrder = "warning",
+			},
+			validate = true,
+		},
+	},
 }

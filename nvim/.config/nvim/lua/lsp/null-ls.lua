@@ -10,9 +10,15 @@ local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup {
 	debug = false,
-	-- TODO: Add corresponding formatters(linters) and diagnostics to the language servers installed!
 	sources = {
+		------------------------------------------------------------------------
+		-- Make sure you install all of the corresponding formatter and linters
+		-- in your machine and make them available in your PATH.
+		------------------------------------------------------------------------
+
+		-- Javascript
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/prettier.lua
+		-- TODO: I would like to use prettierd for fast formatting, but currently it doesn't support passing args. https://github.com/fsouza/prettierd/issues/237
 		formatting.prettier.with {
 			filetypes = {
 				"javascript",
@@ -31,11 +37,6 @@ null_ls.setup {
 			},
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 		},
-
-		------------------------------------------------------------------------
-		-- Make sure you install all of the corresponding formatter and linters
-		-- in your machine and make them available in your PATH.
-		------------------------------------------------------------------------
 
 		-- Python
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/black.lua

@@ -100,6 +100,7 @@ local mappings = {
 	-- Trouble keybindings
 	T = {
 		name = "Trouble",
+		s = { "<cmd>TodoTelescope<CR>", "Todos" },
 		t = { "<cmd>Trouble<CR>", "Trouble" },
 		w = { "<cmd>Trouble workspace_diagnostics<CR>", "Workspace Diagnotics" },
 		d = { "<cmd>Trouble document_diagnostics<CR>", "Document Diagnotics" },

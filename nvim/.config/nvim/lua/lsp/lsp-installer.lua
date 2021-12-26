@@ -38,7 +38,7 @@ lsp_installer.on_server_ready(function(server)
 			-- with the user's own settings (opts).
 			server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
 		}
-		-- Attaches this server to all current open buffers witha 'filtype' that matches the server's configured filetypes
+		-- Attaches this server to all current open buffers with a 'filtype' that matches the server's configured filetypes
 		server:attach_buffers()
 	end
 
