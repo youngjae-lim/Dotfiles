@@ -13,7 +13,7 @@ M.luadev = require("lua-dev").setup {
 		settings = {
 			Lua = {
 				diagnostics = {
-					globals = { "hs" },
+					globals = { "vim", "hs" },
 				},
 				workspace = {
 					preloadFileSize = 350,

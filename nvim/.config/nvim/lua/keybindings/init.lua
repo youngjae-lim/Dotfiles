@@ -122,6 +122,8 @@ map(
 	[[<Cmd>lua require'telescope-config.directory_picker'.directory_picker()<CR>]],
 	{ noremap = true, silent = true }
 )
+-- Run a repository picker(it uses fd underneath it)
+map("n", ",x", [[<Cmd>lua require'telescope-config.repo_picker'.repo_picker()<CR>]], { noremap = true, silent = true })
 -- search @TODOs
 map("n", ",t", [[<Cmd>lua require'telescope-config'.search_todos()<CR>]], { noremap = true, silent = true })
 

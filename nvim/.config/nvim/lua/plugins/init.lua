@@ -82,7 +82,7 @@ return require("packer").startup(function(use)
 			require("neoclip").setup()
 		end,
 	}
-	use "cljoly/telescope-repo.nvim"
+	-- use "cljoly/telescope-repo.nvim"
 	use "nvim-telescope/telescope-file-browser.nvim"
 
 	-- cmp plugins
@@ -110,6 +110,7 @@ return require("packer").startup(function(use)
 	use "onsails/lspkind-nvim"
 	use "ray-x/lsp_signature.nvim"
 	use "simrat39/rust-tools.nvim"
+	use "mfussenegger/nvim-dap"
 	use {
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
