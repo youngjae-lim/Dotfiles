@@ -24,6 +24,6 @@ M.luadev = require("lua-dev").setup {
 }
 -- TODO: take a look at what M.luadev variable is passing to lsp-installer.lua
 -- run :luafile %:p
-P(M.luadev)
+-- P(M.luadev)
 
 return M

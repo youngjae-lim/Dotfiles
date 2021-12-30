@@ -6,8 +6,8 @@ wk.setup {
 		spelling = { enabled = false, suggestions = 20 },
 		presets = {
 			operators = false,
-			motions = false,
-			text_objects = false,
+			motions = true,
+			text_objects = true,
 			windows = true,
 			nav = false,
 			z = false,

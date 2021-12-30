@@ -74,4 +74,4 @@ vim.cmd "filetype plugin indent on"
 vim.cmd "set fillchars+=vert:│"
 vim.cmd "set iskeyword+=-"
 vim.opt.termguicolors = true
-vim.cmd("colorscheme everforest")
+vim.cmd("colorscheme melange")
