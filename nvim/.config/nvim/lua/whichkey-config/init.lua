@@ -6,8 +6,8 @@ wk.setup {
 		spelling = { enabled = false, suggestions = 20 },
 		presets = {
 			operators = false,
-			motions = true,
-			text_objects = true,
+			motions = false, -- Don't set this to true. Otherwise, vim-highligher won't work.
+			text_objects = false, -- Don't set this to true. Otherwise, vim-highligher won't work.
 			windows = true,
 			nav = false,
 			z = false,
@@ -40,6 +40,7 @@ local mappings = {
 		"Telescope File Browser",
 	},
 	O = { "<cmd>!mostRecentNote.sh<CR>", "Open Most Recent Note in PDF" },
+
 	-- LSP-related keybindings
 	l = {
 		name = "LSP",
