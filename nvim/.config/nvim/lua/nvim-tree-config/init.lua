@@ -83,7 +83,15 @@ nvim_tree.setup {
 		-- the command arguments as a list
 		args = {},
 	},
-
+	filters = {
+		dotfiles = false,
+		custom = {},
+	},
+	git = {
+		enable = true,
+		ignore = true,
+		timeout = 500,
+	},
 	view = {
 		-- width of the window, can be either a number (columns) or a string in `%`, for left or right side placement
 		width = 30,
