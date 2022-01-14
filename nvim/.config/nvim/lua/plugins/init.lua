@@ -41,6 +41,7 @@ return require("packer").startup(function(use)
 	use "wbthomason/packer.nvim"
 
 	-- Colorschemes
+	use "markvincze/panda-vim"
 	use "savq/melange"
 	use "lunarvim/darkplus.nvim"
 	use "whatsthatsmell/codesmell_dark.vim"
