@@ -96,7 +96,7 @@ map("n", ",v", [[<Cmd>lua require'telescope-config'.browse_nvim_config()<CR>]], 
 -- Search Google Chrome Bookmarks & Go
 map("n", ",b", [[<Cmd>lua require'telescope'.extensions.bookmarks.bookmarks()<CR>]], { noremap = true, silent = true })
 -- Neoclip
-map("n", ",c", [[<Cmd>lua require'telescope'.extensions.neoclip.plus()<CR>]], { noremap = true, silent = true })
+map("n", ",c", [[<Cmd>lua require'telescope'.extensions.neoclip.default()<CR>]], { noremap = true, silent = true })
 -- Grep word under cursor
 map("n", ",w", [[<Cmd>lua require'telescope.builtin'.grep_string()<CR>]], { noremap = true, silent = true })
 -- Grep word under cursor - case-sensitive (exact word) - made for use with Replace All - see <leader>ra

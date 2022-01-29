@@ -50,7 +50,7 @@ require("telescope").setup {
 			override_file_sorter = true,
 			case_mode = "smart_case", -- this is default
 		},
-		bookmarks = { selected_browser = "google_chrome", url_open_command = "open" },
+		bookmarks = { selected_browser = "chrome", url_open_command = "open" },
 		file_browser = { hidden = true },
 	},
 	defaults = {
