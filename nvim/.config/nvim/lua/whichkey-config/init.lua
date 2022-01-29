@@ -33,7 +33,10 @@ wk.setup {
 local mappings = {
 	x = { ":bdelete!<CR>", "Close Buffer" },
 	E = { ":e ~/.config/nvim/init.lua<CR>", "Edit nvim config" },
-	f = { ":Telescope find_files<CR>", "Telescope Find Files" },
+	f = {
+		':Telescope find_files hidden=true file_ignore_patterns={".git/"} no_ignore=true<CR>',
+		"Telescope Find Files",
+	},
 	r = { ":Telescope live_grep<CR>", "Telescope Live Grep" },
 	b = {
 		'<cmd>lua require("telescope").extensions.file_browser.file_browser() <CR>',
