@@ -84,7 +84,6 @@ return require("packer").startup(function(use)
 			require("neoclip").setup()
 		end,
 	}
-	-- use "cljoly/telescope-repo.nvim"
 	use "nvim-telescope/telescope-file-browser.nvim"
 
 	-- cmp plugins

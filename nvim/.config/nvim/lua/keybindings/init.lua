@@ -106,8 +106,6 @@ map(
 	[[<Cmd>lua require'telescope.builtin'.grep_string({word_match='-w'})<CR>]],
 	{ noremap = true, silent = true }
 )
--- Get list of repos
-map("n", ",r", [[<Cmd>lua require'telescope-config'.repo_list()<CR>]], { noremap = true, silent = true })
 -- Run a color picker
 map(
 	"n",
