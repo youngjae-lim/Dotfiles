@@ -49,6 +49,13 @@ local autocmds = {
 			"silent! lua vim.highlight.on_yank({higroup = 'Visual', timeout = 2000})",
 		},
 	},
+	jet_to_html = {
+		{
+			"BufRead, BufNewFile",
+			"*.jet",
+			"set filetype=html",
+		},
+	},
 }
 
 nvim_create_augroups(autocmds)

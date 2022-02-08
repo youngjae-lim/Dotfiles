@@ -18,6 +18,6 @@ configs.setup {
 		-- termcolors = {} -- table of colour name strings
 	},
 	autopairs = { enable = true },
-	indent = { enable = true },
+	indent = { enable = false },
 	context_commentstring = { enable = true, enable_autocmd = false },
 }

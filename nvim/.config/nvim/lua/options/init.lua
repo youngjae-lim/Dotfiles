@@ -45,6 +45,7 @@ local options_global_local = {
 	shiftwidth = 2,
 	autoindent = true,
 	expandtab = true,
+	background = "dark",
 }
 
 -- All buffers always have a copy of this setting.
@@ -74,4 +75,5 @@ vim.cmd "filetype plugin indent on"
 vim.cmd "set fillchars+=vert:│"
 vim.cmd "set iskeyword+=-"
 vim.opt.termguicolors = true
-vim.cmd("colorscheme everforest")
+vim.g.everforest_background = "hard"
+vim.cmd "colorscheme everforest"

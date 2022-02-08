@@ -32,7 +32,7 @@ null_ls.setup {
 				"html",
 				"json",
 				"yaml",
-				-- "markdown",
+				"markdown",
 				"graphql",
 			},
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
@@ -61,8 +61,8 @@ null_ls.setup {
 
 		-- Markdown
 		-- Make sure you install https://github.com/igorshubovych/markdownlint-cli
-		formatting.markdownlint,
-		diagnostics.markdownlint, -- grammarly language server will be supporting markdown as well
+		-- formatting.markdownlint,
+		-- diagnostics.markdownlint, -- grammarly language server will be supporting markdown as well
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
