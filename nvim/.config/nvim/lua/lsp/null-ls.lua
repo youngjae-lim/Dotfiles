@@ -34,6 +34,7 @@ null_ls.setup {
 				"yaml",
 				"markdown",
 				"graphql",
+				"sql",
 			},
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 		},

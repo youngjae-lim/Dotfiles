@@ -41,6 +41,7 @@ return require("packer").startup(function(use)
 	use "wbthomason/packer.nvim"
 
 	-- Colorschemes
+	use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
 	use "markvincze/panda-vim"
 	use "savq/melange"
 	use "lunarvim/darkplus.nvim"

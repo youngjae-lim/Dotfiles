@@ -75,5 +75,9 @@ vim.cmd "filetype plugin indent on"
 vim.cmd "set fillchars+=vert:│"
 vim.cmd "set iskeyword+=-"
 vim.opt.termguicolors = true
+vim.g.markdown_fenced_languages = {
+	"sql",
+}
+vim.g.codeschool_contrast_dark = "soft"
 vim.g.everforest_background = "hard"
-vim.cmd "colorscheme everforest"
+vim.cmd "colorscheme codeschool"
