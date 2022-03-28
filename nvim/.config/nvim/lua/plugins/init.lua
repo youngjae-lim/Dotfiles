@@ -37,6 +37,7 @@ packer.init {
 
 -- Install plugins
 return require("packer").startup(function(use)
+	use "preservim/vim-markdown"
 	-- Package Manager for neovim
 	use "wbthomason/packer.nvim"
 

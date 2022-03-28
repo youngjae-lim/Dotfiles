@@ -80,4 +80,4 @@ vim.g.markdown_fenced_languages = {
 }
 vim.g.codeschool_contrast_dark = "soft"
 vim.g.everforest_background = "hard"
-vim.cmd "colorscheme codeschool"
+vim.cmd("colorscheme codeschool")
