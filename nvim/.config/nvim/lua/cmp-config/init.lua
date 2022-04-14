@@ -21,6 +21,10 @@ cmp.setup {
 			-- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
 		end,
 	},
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
 
 	mapping = {
 		["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -67,9 +71,6 @@ cmp.setup {
 		-- { name = 'ultisnips' }, -- For utisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
 	},
-	documentation = {
-		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" }, -- order of items shown in the completion
 		format = lspkind.cmp_format {
@@ -89,21 +90,18 @@ cmp.setup {
 }
 
 -- Use buffer source for `/`.
-cmp.setup.cmdline("/", { sources = { { name = "buffer" } } })
+-- cmp.setup.cmdline("/", { sources = { { name = "buffer" } } })
+
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline("/", {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = "buffer" },
+	},
+})
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(":", {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
-	mapping = {
-		["<C-n>"] = cmp.mapping.select_next_item {
-			behavior = cmp.SelectBehavior.Insert,
-		},
-		["<C-p>"] = cmp.mapping.select_prev_item {
-			behavior = cmp.SelectBehavior.Insert,
-		},
-		["<CR>"] = cmp.mapping.confirm {
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
-		},
-	},
 })
