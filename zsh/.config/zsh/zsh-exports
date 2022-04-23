@@ -12,4 +12,5 @@ fi
 
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.config/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 eval "$(zoxide init zsh)"

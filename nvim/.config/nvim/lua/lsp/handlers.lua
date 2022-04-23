@@ -95,8 +95,9 @@ M.on_attach = function(client, bufnr)
 		or client.name == "jsonls"
 		or client.name == "rust_analyzer"
 		or client.name == "gopls"
-    or client.name == "html"
-    or client.name == "sumneko_lua"
+		or client.name == "html"
+		or client.name == "sumneko_lua"
+		or client.name == "intelephense"
 	then
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
 		-- null-ls will take care of formatting any languages included in tsserver

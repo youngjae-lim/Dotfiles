@@ -14,6 +14,11 @@ lsp_installer.on_server_ready(function(server)
 	----------------------------------------------------------------
 	-- Feel free to add any customized settings for each language --
 	----------------------------------------------------------------
+	-- intelephense for php
+	if server.name == "intelephense" then
+		local intelephense_opts = require "lsp.settings.intelephense"
+		opts = vim.tbl_deep_extend("force", intelephense_opts, opts)
+	end
 
 	-- jsonls
 	if server.name == "jsonls" then

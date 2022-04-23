@@ -56,6 +56,10 @@ null_ls.setup {
 		formatting.gofmt,
 		diagnostics.golangci_lint,
 
+		-- Php
+		formatting.phpcbf,
+		diagnostics.phpcs,
+
 		-- Shell
 		formatting.shfmt,
 		diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
