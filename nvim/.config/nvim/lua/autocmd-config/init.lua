@@ -56,6 +56,14 @@ local autocmds = {
 			"set filetype=html",
 		},
 	},
+	-- TODO: when zathura is opened, the vim editor is frozen. Besides, the pdf file is opened with non-readable characters in the buffer. How can I resolve this?
+	open_pdf_with_zathura = {
+		{
+			"BufRead",
+			"*.pdf",
+			'!zathura "%:p"',
+		},
+	},
 }
 
 nvim_create_augroups(autocmds)

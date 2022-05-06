@@ -210,5 +210,8 @@ map("n", ";tf", [[<cmd>lua require('options.toggle').toggle_fold_col()<CR>]], { 
 -- current date time notify
 map("n", "<leader>dt", ":lua require('funcs').notify_current_datetime()<CR>", { noremap = true, silent = true })
 
+-- open a pdf file with zathura
+-- map("n", "<leader>op", ":lua require('funcs').zathura_open_pdf()<CR>", { noremap = true, silent = true })
+
 -- Turn a markdown file into a presentation pdf
 map("n", "<leader>mp", ':!buildPresentation.sh "%:p"<CR>', { noremap = true, silent = true })
