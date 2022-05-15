@@ -64,6 +64,14 @@ local autocmds = {
 			'!zathura "%:p"',
 		},
 	},
+	-- Turn on autoindent for php
+	turn_on_autoindent_for_php = {
+		{
+			"FileType",
+			"*",
+			"setlocal autoindent",
+		},
+	},
 }
 
 nvim_create_augroups(autocmds)

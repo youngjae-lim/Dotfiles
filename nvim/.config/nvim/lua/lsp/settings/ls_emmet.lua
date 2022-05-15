@@ -17,6 +17,7 @@ return {
 		"sass",
 		"svelte",
 		"jsx",
+		"php",
 	},
 	settings = {},
 }

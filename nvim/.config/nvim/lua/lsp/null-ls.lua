@@ -57,8 +57,8 @@ null_ls.setup {
 		diagnostics.golangci_lint,
 
 		-- Php
-		formatting.phpcbf,
-		diagnostics.phpcs,
+		formatting.phpcbf.with { extra_args = { "--tab-width=2", "--standard=PSR12" } },
+		-- diagnostics.phpcs,
 
 		-- Shell
 		formatting.shfmt,

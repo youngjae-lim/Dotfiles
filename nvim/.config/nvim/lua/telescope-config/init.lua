@@ -1,4 +1,5 @@
 local actions = require "telescope.actions"
+
 local action_state = require "telescope.actions.state"
 local custom_actions = {}
 
@@ -109,6 +110,7 @@ require("telescope").setup {
 				["<tab>"] = actions.toggle_selection + actions.move_selection_next,
 				["<s-tab>"] = actions.toggle_selection + actions.move_selection_previous,
 				["<C-q>"] = actions.smart_send_to_qflist,
+				["<esc>"] = actions.drop_all + actions.close,
 				["<CR>"] = custom_actions.multi_selection_open,
 				["<c-v>"] = custom_actions.multi_selection_open_vsplit,
 				["<c-s>"] = custom_actions.multi_selection_open_split,
