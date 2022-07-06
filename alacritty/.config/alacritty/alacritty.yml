@@ -1,35 +1,63 @@
 # Colors (One Darker)
 # Note I am using alacritty-ligatures until ligatures make it upstream
+# colors:
+#   # Default colors
+#   primary:
+#     # background: "#232731"
+#     background: "#1f2227"
+#     foreground: "#abb2bf"
+#
+#   # Normal colors
+#   # Nord
+#   normal:
+#     black: "#4C566A"
+#     red: "#bf616a"
+#     green: "#A3BE8C"
+#     yellow: "#D7BA7D"
+#     blue: "#5e81ac"
+#     magenta: "#B48EAD"
+#     cyan: "#88c0d0"
+#     white: "#abb2bf"
+#
+#   # Bright colors
+#   bright:
+#     black: "#4C566A"
+#     red: "#bf616a"
+#     green: "#A3BE8C"
+#     yellow: "#D7BA7D"
+#     blue: "#5e81ac"
+#     magenta: "#B48EAD"
+#     cyan: "#88c0d0"
+#     white: "#abb2bf"
+
+# Colors (Oceanic Next)
 colors:
   # Default colors
   primary:
-    # background: "#232731"
-    background: "#1f2227"
-    foreground: "#abb2bf"
+    background: '0x1b2b34'
+    foreground: '0xd8dee9'
 
   # Normal colors
-  # Nord
   normal:
-    black: "#4C566A"
-    red: "#bf616a"
-    green: "#A3BE8C"
-    yellow: "#D7BA7D"
-    blue: "#5e81ac"
-    magenta: "#B48EAD"
-    cyan: "#88c0d0"
-    white: "#abb2bf"
+    black: '0x29414f'
+    red: '0xec5f67'
+    green: '0x99c794'
+    yellow: '0xfac863'
+    blue: '0x6699cc'
+    magenta: '0xc594c5'
+    cyan: '0x5fb3b3'
+    white: '0x65737e'
 
   # Bright colors
   bright:
-    black: "#4C566A"
-    red: "#bf616a"
-    green: "#A3BE8C"
-    yellow: "#D7BA7D"
-    blue: "#5e81ac"
-    magenta: "#B48EAD"
-    cyan: "#88c0d0"
-    white: "#abb2bf"
-
+    black: '0x405860'
+    red: '0xec5f67'
+    green: '0x99c794'
+    yellow: '0xfac863'
+    blue: '0x6699cc'
+    magenta: '0xc594c5'
+    cyan: '0x5fb3b3'
+    white: '0xadb5c0'
   #   normal:
   #     black: "#4b5263"
   #     red: "#e06c75"
@@ -55,8 +83,8 @@ colors:
 
   # Change cursor colors
   cursor:
-    text: "#3B4252"
-    cursor: "#ECEFF4"
+    text: '#3B4252'
+    cursor: '#ECEFF4'
 
 cursor:
   style:
@@ -92,6 +120,7 @@ font:
     x: 0
     y: 0
 window:
+  opcaity: 0.5
   padding:
     x: 6
     y: 6

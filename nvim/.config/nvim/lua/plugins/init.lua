@@ -72,7 +72,6 @@ return require("packer").startup(function(use)
 	use "folke/which-key.nvim"
 	use "akinsho/toggleterm.nvim"
 	use "stevearc/dressing.nvim"
-	use "glepnir/dashboard-nvim"
 	use "rcarriga/nvim-notify"
 
 	-- Telescope and its extensions
