@@ -1,6 +1,9 @@
 return {
 	settings = {
 		intelephense = {
+			environment = {
+				includePaths = "vendor",
+			},
 			stubs = {
 				"bcmath",
 				"bz2",
