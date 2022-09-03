@@ -5,13 +5,18 @@ if [ -d "$HOME/.bookmarks" ]; then
 fi
 
 # pyenv initialization
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi
+# if command -v pyenv 1>/dev/null 2>&1; then
+  # eval "$(pyenv init --path)"
+  # eval "$(pyenv init -)"
+# fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.config/bin"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="/Applications/XAMPP/xamppfiles/bin:${PATH}"
 eval "$(zoxide init zsh)"
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/takuya.omp.json)"
